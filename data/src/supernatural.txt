@@ -1,0 +1,26 @@
+# supernatural|신·영혼|🔮
+god|신 꿈
+buddha|부처 꿈
+jesus|예수 꿈
+angel|천사 꿈
+devil|악마 꿈
+demon|마귀 꿈
+ghost|귀신 꿈
+possessed|귀신 들리는 꿈
+spirit|유령 꿈
+soul|영혼 꿈
+goblin|도깨비 꿈
+mountain-spirit|산신령 꿈
+dragon-king|용왕 꿈
+fairy|선녀 꿈
+grim-reaper|저승사자 꿈
+afterlife|저승 꿈
+reincarnation|환생 꿈
+shaman|무당 꿈
+exorcism|굿 하는 꿈
+fortune-telling|점 보는 꿈
+pray|기도하는 꿈
+ancestral-rite|제사 꿈
+bow|절하는 꿈
+talisman|부적 꿈
+cross|십자가 꿈

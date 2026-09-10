@@ -1,0 +1,2948 @@
+{
+  "generatedAt": "2026-09-10T08:32:03.414Z",
+  "total": 480,
+  "categories": [
+    {
+      "id": "animals",
+      "name": "동물",
+      "emoji": "🐾",
+      "count": 56
+    },
+    {
+      "id": "body",
+      "name": "신체·건강",
+      "emoji": "🦷",
+      "count": 45
+    },
+    {
+      "id": "emotion",
+      "name": "감정·상태",
+      "emoji": "💭",
+      "count": 34
+    },
+    {
+      "id": "events",
+      "name": "사건·행동",
+      "emoji": "⚡",
+      "count": 68
+    },
+    {
+      "id": "food",
+      "name": "음식",
+      "emoji": "🍎",
+      "count": 55
+    },
+    {
+      "id": "nature",
+      "name": "자연·날씨",
+      "emoji": "🌊",
+      "count": 47
+    },
+    {
+      "id": "objects",
+      "name": "물건·재물",
+      "emoji": "💰",
+      "count": 60
+    },
+    {
+      "id": "people",
+      "name": "사람",
+      "emoji": "👥",
+      "count": 42
+    },
+    {
+      "id": "places",
+      "name": "장소",
+      "emoji": "🏠",
+      "count": 48
+    },
+    {
+      "id": "supernatural",
+      "name": "신·영혼",
+      "emoji": "🔮",
+      "count": 25
+    }
+  ],
+  "keywords": [
+    {
+      "id": "snake",
+      "slug": "뱀",
+      "keyword": "뱀 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "dog",
+      "slug": "개",
+      "keyword": "개 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "puppy",
+      "slug": "강아지",
+      "keyword": "강아지 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "cat",
+      "slug": "고양이",
+      "keyword": "고양이 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "tiger",
+      "slug": "호랑이",
+      "keyword": "호랑이 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "lion",
+      "slug": "사자",
+      "keyword": "사자 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "pig",
+      "slug": "돼지",
+      "keyword": "돼지 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "cow",
+      "slug": "소",
+      "keyword": "소 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "horse",
+      "slug": "말",
+      "keyword": "말 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "dragon",
+      "slug": "용",
+      "keyword": "용 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "fish",
+      "slug": "물고기",
+      "keyword": "물고기 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "carp",
+      "slug": "잉어",
+      "keyword": "잉어 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "bird",
+      "slug": "새",
+      "keyword": "새 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "mouse",
+      "slug": "쥐",
+      "keyword": "쥐 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "spider",
+      "slug": "거미",
+      "keyword": "거미 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "bee",
+      "slug": "벌",
+      "keyword": "벌 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "butterfly",
+      "slug": "나비",
+      "keyword": "나비 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "ant",
+      "slug": "개미",
+      "keyword": "개미 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "cockroach",
+      "slug": "바퀴벌레",
+      "keyword": "바퀴벌레 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "worm",
+      "slug": "지렁이",
+      "keyword": "지렁이 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "crocodile",
+      "slug": "악어",
+      "keyword": "악어 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "shark",
+      "slug": "상어",
+      "keyword": "상어 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "bear",
+      "slug": "곰",
+      "keyword": "곰 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "fox",
+      "slug": "여우",
+      "keyword": "여우 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "wolf",
+      "slug": "늑대",
+      "keyword": "늑대 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "deer",
+      "slug": "사슴",
+      "keyword": "사슴 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "monkey",
+      "slug": "원숭이",
+      "keyword": "원숭이 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "rabbit",
+      "slug": "토끼",
+      "keyword": "토끼 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "chicken",
+      "slug": "닭",
+      "keyword": "닭 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "duck",
+      "slug": "오리",
+      "keyword": "오리 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "turtle",
+      "slug": "거북이",
+      "keyword": "거북이 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "frog",
+      "slug": "개구리",
+      "keyword": "개구리 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "whale",
+      "slug": "고래",
+      "keyword": "고래 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "eagle",
+      "slug": "독수리",
+      "keyword": "독수리 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "magpie",
+      "slug": "까치",
+      "keyword": "까치 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "crow",
+      "slug": "까마귀",
+      "keyword": "까마귀 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "pigeon",
+      "slug": "비둘기",
+      "keyword": "비둘기 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "octopus",
+      "slug": "문어",
+      "keyword": "문어 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "crab",
+      "slug": "게",
+      "keyword": "게 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "elephant",
+      "slug": "코끼리",
+      "keyword": "코끼리 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "giraffe",
+      "slug": "기린",
+      "keyword": "기린 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "goat",
+      "slug": "염소",
+      "keyword": "염소 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "sheep",
+      "slug": "양",
+      "keyword": "양 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "toad",
+      "slug": "두꺼비",
+      "keyword": "두꺼비 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "lizard",
+      "slug": "도마뱀",
+      "keyword": "도마뱀 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "bat",
+      "slug": "박쥐",
+      "keyword": "박쥐 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "bug",
+      "slug": "벌레",
+      "keyword": "벌레 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "fly",
+      "slug": "파리",
+      "keyword": "파리 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "mosquito",
+      "slug": "모기",
+      "keyword": "모기 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "moth",
+      "slug": "나방",
+      "keyword": "나방 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "centipede",
+      "slug": "지네",
+      "keyword": "지네 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "scorpion",
+      "slug": "전갈",
+      "keyword": "전갈 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "caterpillar",
+      "slug": "애벌레",
+      "keyword": "애벌레 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "baby-animal",
+      "slug": "새끼-동물",
+      "keyword": "새끼 동물 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "dead-animal",
+      "slug": "죽은-동물",
+      "keyword": "죽은 동물 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "animal-bite",
+      "slug": "동물에게-물리는",
+      "keyword": "동물에게 물리는 꿈",
+      "category": "animals"
+    },
+    {
+      "id": "teeth-falling",
+      "slug": "이빨-빠지는",
+      "keyword": "이빨 빠지는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "broken-tooth",
+      "slug": "이빨-깨지는",
+      "keyword": "이빨 깨지는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "tooth-pain",
+      "slug": "이가-아픈",
+      "keyword": "이가 아픈 꿈",
+      "category": "body"
+    },
+    {
+      "id": "hair-falling",
+      "slug": "머리카락-빠지는",
+      "keyword": "머리카락 빠지는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "cut-hair",
+      "slug": "머리-자르는",
+      "keyword": "머리 자르는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "dye-hair",
+      "slug": "머리-염색하는",
+      "keyword": "머리 염색하는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "gray-hair",
+      "slug": "흰머리",
+      "keyword": "흰머리 꿈",
+      "category": "body"
+    },
+    {
+      "id": "bald",
+      "slug": "대머리",
+      "keyword": "대머리 꿈",
+      "category": "body"
+    },
+    {
+      "id": "blood",
+      "slug": "피",
+      "keyword": "피 꿈",
+      "category": "body"
+    },
+    {
+      "id": "nosebleed",
+      "slug": "코피",
+      "keyword": "코피 꿈",
+      "category": "body"
+    },
+    {
+      "id": "hand",
+      "slug": "손",
+      "keyword": "손 꿈",
+      "category": "body"
+    },
+    {
+      "id": "foot",
+      "slug": "발",
+      "keyword": "발 꿈",
+      "category": "body"
+    },
+    {
+      "id": "face",
+      "slug": "얼굴",
+      "keyword": "얼굴 꿈",
+      "category": "body"
+    },
+    {
+      "id": "wrinkle",
+      "slug": "주름",
+      "keyword": "주름 꿈",
+      "category": "body"
+    },
+    {
+      "id": "poop",
+      "slug": "똥",
+      "keyword": "똥 꿈",
+      "category": "body"
+    },
+    {
+      "id": "pee",
+      "slug": "오줌",
+      "keyword": "오줌 꿈",
+      "category": "body"
+    },
+    {
+      "id": "stomachache",
+      "slug": "배-아픈",
+      "keyword": "배 아픈 꿈",
+      "category": "body"
+    },
+    {
+      "id": "pregnancy",
+      "slug": "임신하는",
+      "keyword": "임신하는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "birth",
+      "slug": "출산하는",
+      "keyword": "출산하는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "injury",
+      "slug": "다치는",
+      "keyword": "다치는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "wound",
+      "slug": "상처",
+      "keyword": "상처 꿈",
+      "category": "body"
+    },
+    {
+      "id": "surgery",
+      "slug": "수술하는",
+      "keyword": "수술하는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "sick",
+      "slug": "아픈",
+      "keyword": "아픈 꿈",
+      "category": "body"
+    },
+    {
+      "id": "dying",
+      "slug": "죽는",
+      "keyword": "죽는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "own-death",
+      "slug": "내가-죽는",
+      "keyword": "내가 죽는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "someone-dies",
+      "slug": "누가-죽는",
+      "keyword": "누가 죽는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "gain-weight",
+      "slug": "살찌는",
+      "keyword": "살찌는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "lose-weight",
+      "slug": "살-빠지는",
+      "keyword": "살 빠지는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "naked",
+      "slug": "알몸",
+      "keyword": "알몸 꿈",
+      "category": "body"
+    },
+    {
+      "id": "grow-tall",
+      "slug": "키-크는",
+      "keyword": "키 크는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "strangled",
+      "slug": "목-졸리는",
+      "keyword": "목 졸리는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "heart",
+      "slug": "심장",
+      "keyword": "심장 꿈",
+      "category": "body"
+    },
+    {
+      "id": "bone",
+      "slug": "뼈",
+      "keyword": "뼈 꿈",
+      "category": "body"
+    },
+    {
+      "id": "fingernail",
+      "slug": "손톱",
+      "keyword": "손톱 꿈",
+      "category": "body"
+    },
+    {
+      "id": "toenail",
+      "slug": "발톱",
+      "keyword": "발톱 꿈",
+      "category": "body"
+    },
+    {
+      "id": "pimple",
+      "slug": "여드름",
+      "keyword": "여드름 꿈",
+      "category": "body"
+    },
+    {
+      "id": "tears",
+      "slug": "눈물",
+      "keyword": "눈물 꿈",
+      "category": "body"
+    },
+    {
+      "id": "sweat",
+      "slug": "땀",
+      "keyword": "땀 꿈",
+      "category": "body"
+    },
+    {
+      "id": "vomit",
+      "slug": "토하는",
+      "keyword": "토하는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "blind",
+      "slug": "눈이-안-보이는",
+      "keyword": "눈이 안 보이는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "mute",
+      "slug": "목소리-안-나오는",
+      "keyword": "목소리 안 나오는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "flying",
+      "slug": "날아다니는",
+      "keyword": "날아다니는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "falling",
+      "slug": "떨어지는",
+      "keyword": "떨어지는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "paralysis",
+      "slug": "가위-눌리는",
+      "keyword": "가위 눌리는 꿈",
+      "category": "body"
+    },
+    {
+      "id": "tattoo",
+      "slug": "타투",
+      "keyword": "타투 꿈",
+      "category": "body"
+    },
+    {
+      "id": "scary",
+      "slug": "무서운",
+      "keyword": "무서운 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "nightmare",
+      "slug": "악몽",
+      "keyword": "악몽",
+      "category": "emotion"
+    },
+    {
+      "id": "happy",
+      "slug": "행복한",
+      "keyword": "행복한 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "joyful",
+      "slug": "기쁜",
+      "keyword": "기쁜 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "sad",
+      "slug": "슬픈",
+      "keyword": "슬픈 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "angry",
+      "slug": "화나는",
+      "keyword": "화나는 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "anxious",
+      "slug": "불안한",
+      "keyword": "불안한 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "lonely",
+      "slug": "외로운",
+      "keyword": "외로운 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "embarrassed",
+      "slug": "부끄러운",
+      "keyword": "부끄러운 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "regret",
+      "slug": "후회하는",
+      "keyword": "후회하는 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "surprised",
+      "slug": "놀라는",
+      "keyword": "놀라는 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "frustrated",
+      "slug": "답답한",
+      "keyword": "답답한 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "precognitive",
+      "slug": "예지몽",
+      "keyword": "예지몽",
+      "category": "emotion"
+    },
+    {
+      "id": "conception",
+      "slug": "태몽",
+      "keyword": "태몽",
+      "category": "emotion"
+    },
+    {
+      "id": "lucid",
+      "slug": "자각몽",
+      "keyword": "자각몽",
+      "category": "emotion"
+    },
+    {
+      "id": "recurring",
+      "slug": "반복되는",
+      "keyword": "반복되는 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "same-dream",
+      "slug": "같은-꿈-반복",
+      "keyword": "같은 꿈 반복",
+      "category": "emotion"
+    },
+    {
+      "id": "dream-in-dream",
+      "slug": "꿈속의꿈",
+      "keyword": "꿈 속의 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "remember",
+      "slug": "기억나는",
+      "keyword": "기억나는 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "forgotten",
+      "slug": "기억-안-나는",
+      "keyword": "기억 안 나는 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "color",
+      "slug": "색깔",
+      "keyword": "색깔 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "black",
+      "slug": "검은색",
+      "keyword": "검은색 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "white",
+      "slug": "하얀색",
+      "keyword": "하얀색 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "red",
+      "slug": "빨간색",
+      "keyword": "빨간색 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "yellow",
+      "slug": "노란색",
+      "keyword": "노란색 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "blue",
+      "slug": "파란색",
+      "keyword": "파란색 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "golden",
+      "slug": "금색",
+      "keyword": "금색 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "number",
+      "slug": "숫자",
+      "keyword": "숫자 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "letters",
+      "slug": "글자",
+      "keyword": "글자 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "sound",
+      "slug": "소리",
+      "keyword": "소리 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "music",
+      "slug": "음악",
+      "keyword": "음악 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "smell",
+      "slug": "냄새",
+      "keyword": "냄새 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "darkness",
+      "slug": "어둠",
+      "keyword": "어둠 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "light",
+      "slug": "빛",
+      "keyword": "빛 꿈",
+      "category": "emotion"
+    },
+    {
+      "id": "receive-money",
+      "slug": "돈-받는",
+      "keyword": "돈 받는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "lose-money",
+      "slug": "돈-잃는",
+      "keyword": "돈 잃는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "give-money",
+      "slug": "돈-주는",
+      "keyword": "돈 주는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "pick-up-money",
+      "slug": "돈-줍는",
+      "keyword": "돈 줍는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "lottery",
+      "slug": "복권-당첨",
+      "keyword": "복권 당첨 꿈",
+      "category": "events"
+    },
+    {
+      "id": "gamble",
+      "slug": "도박",
+      "keyword": "도박 꿈",
+      "category": "events"
+    },
+    {
+      "id": "exam",
+      "slug": "시험",
+      "keyword": "시험 꿈",
+      "category": "events"
+    },
+    {
+      "id": "pass-exam",
+      "slug": "합격하는",
+      "keyword": "합격하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "fail-exam",
+      "slug": "불합격하는",
+      "keyword": "불합격하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "interview",
+      "slug": "면접",
+      "keyword": "면접 꿈",
+      "category": "events"
+    },
+    {
+      "id": "late",
+      "slug": "지각하는",
+      "keyword": "지각하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "promotion",
+      "slug": "승진하는",
+      "keyword": "승진하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "fired",
+      "slug": "해고당하는",
+      "keyword": "해고당하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "chased",
+      "slug": "쫓기는",
+      "keyword": "쫓기는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "run-away",
+      "slug": "도망가는",
+      "keyword": "도망가는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "hide",
+      "slug": "숨는",
+      "keyword": "숨는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "trapped",
+      "slug": "갇히는",
+      "keyword": "갇히는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "lost",
+      "slug": "길-잃는",
+      "keyword": "길 잃는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "fight",
+      "slug": "싸우는",
+      "keyword": "싸우는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "hit",
+      "slug": "맞는",
+      "keyword": "맞는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "kill",
+      "slug": "죽이는",
+      "keyword": "죽이는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "murder",
+      "slug": "살인",
+      "keyword": "살인 꿈",
+      "category": "events"
+    },
+    {
+      "id": "war",
+      "slug": "전쟁",
+      "keyword": "전쟁 꿈",
+      "category": "events"
+    },
+    {
+      "id": "explosion",
+      "slug": "폭발",
+      "keyword": "폭발 꿈",
+      "category": "events"
+    },
+    {
+      "id": "shot",
+      "slug": "총-맞는",
+      "keyword": "총 맞는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "stabbed",
+      "slug": "칼에-찔리는",
+      "keyword": "칼에 찔리는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "arrested",
+      "slug": "체포되는",
+      "keyword": "체포되는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "steal",
+      "slug": "도둑질하는",
+      "keyword": "도둑질하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "robbed",
+      "slug": "도둑맞는",
+      "keyword": "도둑맞는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "lose-item",
+      "slug": "물건-잃어버리는",
+      "keyword": "물건 잃어버리는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "accident",
+      "slug": "사고",
+      "keyword": "사고 꿈",
+      "category": "events"
+    },
+    {
+      "id": "car-accident",
+      "slug": "교통사고",
+      "keyword": "교통사고 꿈",
+      "category": "events"
+    },
+    {
+      "id": "plane-crash",
+      "slug": "비행기-추락",
+      "keyword": "비행기 추락 꿈",
+      "category": "events"
+    },
+    {
+      "id": "drown",
+      "slug": "물에-빠지는",
+      "keyword": "물에 빠지는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "fall-down",
+      "slug": "넘어지는",
+      "keyword": "넘어지는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "swim",
+      "slug": "수영하는",
+      "keyword": "수영하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "run",
+      "slug": "달리는",
+      "keyword": "달리는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "drive",
+      "slug": "운전하는",
+      "keyword": "운전하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "travel",
+      "slug": "여행",
+      "keyword": "여행 꿈",
+      "category": "events"
+    },
+    {
+      "id": "move-house",
+      "slug": "이사하는",
+      "keyword": "이사하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "hike",
+      "slug": "등산하는",
+      "keyword": "등산하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "fishing",
+      "slug": "낚시하는",
+      "keyword": "낚시하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "hunt",
+      "slug": "사냥하는",
+      "keyword": "사냥하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "wedding",
+      "slug": "결혼하는",
+      "keyword": "결혼하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "proposal",
+      "slug": "프로포즈-받는",
+      "keyword": "프로포즈 받는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "divorce",
+      "slug": "이혼하는",
+      "keyword": "이혼하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "funeral",
+      "slug": "장례식",
+      "keyword": "장례식 꿈",
+      "category": "events"
+    },
+    {
+      "id": "birthday",
+      "slug": "생일",
+      "keyword": "생일 꿈",
+      "category": "events"
+    },
+    {
+      "id": "party",
+      "slug": "파티",
+      "keyword": "파티 꿈",
+      "category": "events"
+    },
+    {
+      "id": "shopping",
+      "slug": "쇼핑하는",
+      "keyword": "쇼핑하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "dance",
+      "slug": "춤추는",
+      "keyword": "춤추는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "sing",
+      "slug": "노래하는",
+      "keyword": "노래하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "cry",
+      "slug": "우는",
+      "keyword": "우는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "laugh",
+      "slug": "웃는",
+      "keyword": "웃는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "kiss",
+      "slug": "키스하는",
+      "keyword": "키스하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "hug",
+      "slug": "안는",
+      "keyword": "안는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "sex",
+      "slug": "성관계",
+      "keyword": "성관계 꿈",
+      "category": "events"
+    },
+    {
+      "id": "confess",
+      "slug": "고백하는",
+      "keyword": "고백하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "breakup",
+      "slug": "이별하는",
+      "keyword": "이별하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "reunion",
+      "slug": "재회하는",
+      "keyword": "재회하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "cheating",
+      "slug": "바람피우는",
+      "keyword": "바람피우는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "partner-cheating",
+      "slug": "연인이-바람피우는",
+      "keyword": "연인이 바람피우는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "lie",
+      "slug": "거짓말하는",
+      "keyword": "거짓말하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "apologize",
+      "slug": "사과하는",
+      "keyword": "사과하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "scold",
+      "slug": "혼나는",
+      "keyword": "혼나는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "clean",
+      "slug": "청소하는",
+      "keyword": "청소하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "cook",
+      "slug": "요리하는",
+      "keyword": "요리하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "study",
+      "slug": "공부하는",
+      "keyword": "공부하는 꿈",
+      "category": "events"
+    },
+    {
+      "id": "eating",
+      "slug": "음식-먹는",
+      "keyword": "음식 먹는 꿈",
+      "category": "food"
+    },
+    {
+      "id": "feast",
+      "slug": "잔치-음식",
+      "keyword": "잔치 음식 꿈",
+      "category": "food"
+    },
+    {
+      "id": "spoiled-food",
+      "slug": "상한-음식",
+      "keyword": "상한 음식 꿈",
+      "category": "food"
+    },
+    {
+      "id": "rice",
+      "slug": "밥",
+      "keyword": "밥 꿈",
+      "category": "food"
+    },
+    {
+      "id": "raw-rice",
+      "slug": "쌀",
+      "keyword": "쌀 꿈",
+      "category": "food"
+    },
+    {
+      "id": "rice-cake",
+      "slug": "떡",
+      "keyword": "떡 꿈",
+      "category": "food"
+    },
+    {
+      "id": "bread",
+      "slug": "빵",
+      "keyword": "빵 꿈",
+      "category": "food"
+    },
+    {
+      "id": "cake",
+      "slug": "케이크",
+      "keyword": "케이크 꿈",
+      "category": "food"
+    },
+    {
+      "id": "noodle",
+      "slug": "국수",
+      "keyword": "국수 꿈",
+      "category": "food"
+    },
+    {
+      "id": "ramen",
+      "slug": "라면",
+      "keyword": "라면 꿈",
+      "category": "food"
+    },
+    {
+      "id": "kimchi",
+      "slug": "김치",
+      "keyword": "김치 꿈",
+      "category": "food"
+    },
+    {
+      "id": "meat",
+      "slug": "고기",
+      "keyword": "고기 꿈",
+      "category": "food"
+    },
+    {
+      "id": "egg",
+      "slug": "계란",
+      "keyword": "계란 꿈",
+      "category": "food"
+    },
+    {
+      "id": "milk",
+      "slug": "우유",
+      "keyword": "우유 꿈",
+      "category": "food"
+    },
+    {
+      "id": "seafood",
+      "slug": "해물",
+      "keyword": "해물 꿈",
+      "category": "food"
+    },
+    {
+      "id": "seaweed",
+      "slug": "미역",
+      "keyword": "미역 꿈",
+      "category": "food"
+    },
+    {
+      "id": "laver",
+      "slug": "김",
+      "keyword": "김 꿈",
+      "category": "food"
+    },
+    {
+      "id": "fruit",
+      "slug": "과일",
+      "keyword": "과일 꿈",
+      "category": "food"
+    },
+    {
+      "id": "apple",
+      "slug": "사과",
+      "keyword": "사과 꿈",
+      "category": "food"
+    },
+    {
+      "id": "pear",
+      "slug": "배-먹는",
+      "keyword": "배 먹는 꿈",
+      "category": "food"
+    },
+    {
+      "id": "grape",
+      "slug": "포도",
+      "keyword": "포도 꿈",
+      "category": "food"
+    },
+    {
+      "id": "persimmon",
+      "slug": "감",
+      "keyword": "감 꿈",
+      "category": "food"
+    },
+    {
+      "id": "peach",
+      "slug": "복숭아",
+      "keyword": "복숭아 꿈",
+      "category": "food"
+    },
+    {
+      "id": "watermelon",
+      "slug": "수박",
+      "keyword": "수박 꿈",
+      "category": "food"
+    },
+    {
+      "id": "melon",
+      "slug": "참외",
+      "keyword": "참외 꿈",
+      "category": "food"
+    },
+    {
+      "id": "banana",
+      "slug": "바나나",
+      "keyword": "바나나 꿈",
+      "category": "food"
+    },
+    {
+      "id": "strawberry",
+      "slug": "딸기",
+      "keyword": "딸기 꿈",
+      "category": "food"
+    },
+    {
+      "id": "tangerine",
+      "slug": "귤",
+      "keyword": "귤 꿈",
+      "category": "food"
+    },
+    {
+      "id": "orange",
+      "slug": "오렌지",
+      "keyword": "오렌지 꿈",
+      "category": "food"
+    },
+    {
+      "id": "plum",
+      "slug": "자두",
+      "keyword": "자두 꿈",
+      "category": "food"
+    },
+    {
+      "id": "jujube",
+      "slug": "대추",
+      "keyword": "대추 꿈",
+      "category": "food"
+    },
+    {
+      "id": "tomato",
+      "slug": "토마토",
+      "keyword": "토마토 꿈",
+      "category": "food"
+    },
+    {
+      "id": "pumpkin",
+      "slug": "호박",
+      "keyword": "호박 꿈",
+      "category": "food"
+    },
+    {
+      "id": "sweet-potato",
+      "slug": "고구마",
+      "keyword": "고구마 꿈",
+      "category": "food"
+    },
+    {
+      "id": "potato",
+      "slug": "감자",
+      "keyword": "감자 꿈",
+      "category": "food"
+    },
+    {
+      "id": "corn",
+      "slug": "옥수수",
+      "keyword": "옥수수 꿈",
+      "category": "food"
+    },
+    {
+      "id": "chestnut",
+      "slug": "밤",
+      "keyword": "밤 꿈",
+      "category": "food"
+    },
+    {
+      "id": "walnut",
+      "slug": "호두",
+      "keyword": "호두 꿈",
+      "category": "food"
+    },
+    {
+      "id": "bean",
+      "slug": "콩",
+      "keyword": "콩 꿈",
+      "category": "food"
+    },
+    {
+      "id": "vegetable",
+      "slug": "채소",
+      "keyword": "채소 꿈",
+      "category": "food"
+    },
+    {
+      "id": "cabbage",
+      "slug": "배추",
+      "keyword": "배추 꿈",
+      "category": "food"
+    },
+    {
+      "id": "radish",
+      "slug": "무",
+      "keyword": "무 꿈",
+      "category": "food"
+    },
+    {
+      "id": "garlic",
+      "slug": "마늘",
+      "keyword": "마늘 꿈",
+      "category": "food"
+    },
+    {
+      "id": "pepper",
+      "slug": "고추",
+      "keyword": "고추 꿈",
+      "category": "food"
+    },
+    {
+      "id": "onion",
+      "slug": "양파",
+      "keyword": "양파 꿈",
+      "category": "food"
+    },
+    {
+      "id": "mushroom",
+      "slug": "버섯",
+      "keyword": "버섯 꿈",
+      "category": "food"
+    },
+    {
+      "id": "honey",
+      "slug": "꿀",
+      "keyword": "꿀 꿈",
+      "category": "food"
+    },
+    {
+      "id": "salt",
+      "slug": "소금",
+      "keyword": "소금 꿈",
+      "category": "food"
+    },
+    {
+      "id": "sugar",
+      "slug": "설탕",
+      "keyword": "설탕 꿈",
+      "category": "food"
+    },
+    {
+      "id": "drink-water",
+      "slug": "물-마시는",
+      "keyword": "물 마시는 꿈",
+      "category": "food"
+    },
+    {
+      "id": "drink-alcohol",
+      "slug": "술-마시는",
+      "keyword": "술 마시는 꿈",
+      "category": "food"
+    },
+    {
+      "id": "coffee",
+      "slug": "커피",
+      "keyword": "커피 꿈",
+      "category": "food"
+    },
+    {
+      "id": "tea",
+      "slug": "차-마시는",
+      "keyword": "차 마시는 꿈",
+      "category": "food"
+    },
+    {
+      "id": "medicine",
+      "slug": "약",
+      "keyword": "약 꿈",
+      "category": "food"
+    },
+    {
+      "id": "poison",
+      "slug": "독-먹는",
+      "keyword": "독 먹는 꿈",
+      "category": "food"
+    },
+    {
+      "id": "water",
+      "slug": "물",
+      "keyword": "물 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "clear-water",
+      "slug": "맑은-물",
+      "keyword": "맑은 물 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "dirty-water",
+      "slug": "더러운-물",
+      "keyword": "더러운 물 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "sea",
+      "slug": "바다",
+      "keyword": "바다 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "river",
+      "slug": "강",
+      "keyword": "강 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "lake",
+      "slug": "호수",
+      "keyword": "호수 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "waterfall",
+      "slug": "폭포",
+      "keyword": "폭포 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "wave",
+      "slug": "파도",
+      "keyword": "파도 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "tsunami",
+      "slug": "쓰나미",
+      "keyword": "쓰나미 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "flood",
+      "slug": "홍수",
+      "keyword": "홍수 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "rain",
+      "slug": "비",
+      "keyword": "비 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "snow",
+      "slug": "눈-내리는",
+      "keyword": "눈 내리는 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "hail",
+      "slug": "우박",
+      "keyword": "우박 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "fog",
+      "slug": "안개",
+      "keyword": "안개 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "ice",
+      "slug": "얼음",
+      "keyword": "얼음 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "fire",
+      "slug": "불",
+      "keyword": "불 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "house-fire",
+      "slug": "불나는",
+      "keyword": "불나는 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "volcano",
+      "slug": "화산",
+      "keyword": "화산 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "mountain",
+      "slug": "산",
+      "keyword": "산 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "cliff",
+      "slug": "절벽",
+      "keyword": "절벽 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "cave",
+      "slug": "동굴",
+      "keyword": "동굴 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "desert",
+      "slug": "사막",
+      "keyword": "사막 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "forest",
+      "slug": "숲",
+      "keyword": "숲 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "tree",
+      "slug": "나무",
+      "keyword": "나무 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "flower",
+      "slug": "꽃",
+      "keyword": "꽃 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "grass",
+      "slug": "풀",
+      "keyword": "풀 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "field",
+      "slug": "들판",
+      "keyword": "들판 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "soil",
+      "slug": "흙",
+      "keyword": "흙 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "mud",
+      "slug": "진흙",
+      "keyword": "진흙 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "stone",
+      "slug": "돌",
+      "keyword": "돌 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "rock",
+      "slug": "바위",
+      "keyword": "바위 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "sky",
+      "slug": "하늘",
+      "keyword": "하늘 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "cloud",
+      "slug": "구름",
+      "keyword": "구름 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "star",
+      "slug": "별",
+      "keyword": "별 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "moon",
+      "slug": "달",
+      "keyword": "달 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "sun",
+      "slug": "태양",
+      "keyword": "태양 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "sunrise",
+      "slug": "해-뜨는",
+      "keyword": "해 뜨는 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "sunset",
+      "slug": "해-지는",
+      "keyword": "해 지는 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "eclipse",
+      "slug": "일식",
+      "keyword": "일식 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "rainbow",
+      "slug": "무지개",
+      "keyword": "무지개 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "earthquake",
+      "slug": "지진",
+      "keyword": "지진 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "lightning",
+      "slug": "번개",
+      "keyword": "번개 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "thunder",
+      "slug": "천둥",
+      "keyword": "천둥 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "storm",
+      "slug": "폭풍",
+      "keyword": "폭풍 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "typhoon",
+      "slug": "태풍",
+      "keyword": "태풍 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "wind",
+      "slug": "바람",
+      "keyword": "바람 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "drought",
+      "slug": "가뭄",
+      "keyword": "가뭄 꿈",
+      "category": "nature"
+    },
+    {
+      "id": "money",
+      "slug": "돈",
+      "keyword": "돈 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "paper-money",
+      "slug": "지폐",
+      "keyword": "지폐 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "coin",
+      "slug": "동전",
+      "keyword": "동전 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "gold",
+      "slug": "금",
+      "keyword": "금 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "gold-ring",
+      "slug": "금반지",
+      "keyword": "금반지 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "ring",
+      "slug": "반지",
+      "keyword": "반지 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "jewel",
+      "slug": "보석",
+      "keyword": "보석 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "diamond",
+      "slug": "다이아몬드",
+      "keyword": "다이아몬드 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "pearl",
+      "slug": "진주",
+      "keyword": "진주 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "watch",
+      "slug": "시계",
+      "keyword": "시계 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "phone",
+      "slug": "핸드폰",
+      "keyword": "핸드폰 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "computer",
+      "slug": "컴퓨터",
+      "keyword": "컴퓨터 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "tv",
+      "slug": "텔레비전",
+      "keyword": "텔레비전 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "camera",
+      "slug": "카메라",
+      "keyword": "카메라 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "car",
+      "slug": "자동차",
+      "keyword": "자동차 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "new-car",
+      "slug": "새-차",
+      "keyword": "새 차 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "bicycle",
+      "slug": "자전거",
+      "keyword": "자전거 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "airplane",
+      "slug": "비행기",
+      "keyword": "비행기 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "boat",
+      "slug": "배-타는",
+      "keyword": "배 타는 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "train",
+      "slug": "기차",
+      "keyword": "기차 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "bus",
+      "slug": "버스",
+      "keyword": "버스 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "house",
+      "slug": "집",
+      "keyword": "집 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "new-house",
+      "slug": "새집",
+      "keyword": "새집 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "key",
+      "slug": "열쇠",
+      "keyword": "열쇠 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "door",
+      "slug": "문",
+      "keyword": "문 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "window",
+      "slug": "창문",
+      "keyword": "창문 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "mirror",
+      "slug": "거울",
+      "keyword": "거울 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "broken-mirror",
+      "slug": "거울-깨지는",
+      "keyword": "거울 깨지는 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "broken-glass",
+      "slug": "유리-깨지는",
+      "keyword": "유리 깨지는 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "knife",
+      "slug": "칼",
+      "keyword": "칼 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "gun",
+      "slug": "총",
+      "keyword": "총 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "rope",
+      "slug": "줄",
+      "keyword": "줄 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "ladder",
+      "slug": "사다리",
+      "keyword": "사다리 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "book",
+      "slug": "책",
+      "keyword": "책 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "letter",
+      "slug": "편지",
+      "keyword": "편지 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "photo",
+      "slug": "사진",
+      "keyword": "사진 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "clothes",
+      "slug": "옷",
+      "keyword": "옷 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "new-clothes",
+      "slug": "새-옷",
+      "keyword": "새 옷 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "shoes",
+      "slug": "신발",
+      "keyword": "신발 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "lost-shoes",
+      "slug": "신발-잃어버리는",
+      "keyword": "신발 잃어버리는 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "bag",
+      "slug": "가방",
+      "keyword": "가방 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "wallet",
+      "slug": "지갑",
+      "keyword": "지갑 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "umbrella",
+      "slug": "우산",
+      "keyword": "우산 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "glasses",
+      "slug": "안경",
+      "keyword": "안경 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "hat",
+      "slug": "모자",
+      "keyword": "모자 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "bed",
+      "slug": "침대",
+      "keyword": "침대 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "chair",
+      "slug": "의자",
+      "keyword": "의자 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "desk",
+      "slug": "책상",
+      "keyword": "책상 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "doll",
+      "slug": "인형",
+      "keyword": "인형 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "toy",
+      "slug": "장난감",
+      "keyword": "장난감 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "candle",
+      "slug": "촛불",
+      "keyword": "촛불 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "lamp",
+      "slug": "등불",
+      "keyword": "등불 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "trash",
+      "slug": "쓰레기",
+      "keyword": "쓰레기 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "box",
+      "slug": "상자",
+      "keyword": "상자 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "gift",
+      "slug": "선물-받는",
+      "keyword": "선물 받는 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "bouquet",
+      "slug": "꽃다발",
+      "keyword": "꽃다발 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "makeup",
+      "slug": "화장하는",
+      "keyword": "화장하는 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "perfume",
+      "slug": "향수",
+      "keyword": "향수 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "cigarette",
+      "slug": "담배",
+      "keyword": "담배 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "alcohol",
+      "slug": "술",
+      "keyword": "술 꿈",
+      "category": "objects"
+    },
+    {
+      "id": "dead-person",
+      "slug": "죽은-사람",
+      "keyword": "죽은 사람 꿈",
+      "category": "people"
+    },
+    {
+      "id": "ancestor",
+      "slug": "조상",
+      "keyword": "조상 꿈",
+      "category": "people"
+    },
+    {
+      "id": "parents",
+      "slug": "부모님",
+      "keyword": "부모님 꿈",
+      "category": "people"
+    },
+    {
+      "id": "father",
+      "slug": "아버지",
+      "keyword": "아버지 꿈",
+      "category": "people"
+    },
+    {
+      "id": "mother",
+      "slug": "어머니",
+      "keyword": "어머니 꿈",
+      "category": "people"
+    },
+    {
+      "id": "grandmother",
+      "slug": "할머니",
+      "keyword": "할머니 꿈",
+      "category": "people"
+    },
+    {
+      "id": "grandfather",
+      "slug": "할아버지",
+      "keyword": "할아버지 꿈",
+      "category": "people"
+    },
+    {
+      "id": "ex-lover",
+      "slug": "헤어진-연인",
+      "keyword": "헤어진 연인 꿈",
+      "category": "people"
+    },
+    {
+      "id": "first-love",
+      "slug": "첫사랑",
+      "keyword": "첫사랑 꿈",
+      "category": "people"
+    },
+    {
+      "id": "crush",
+      "slug": "짝사랑",
+      "keyword": "짝사랑 꿈",
+      "category": "people"
+    },
+    {
+      "id": "friend",
+      "slug": "친구",
+      "keyword": "친구 꿈",
+      "category": "people"
+    },
+    {
+      "id": "dead-friend",
+      "slug": "죽은-친구",
+      "keyword": "죽은 친구 꿈",
+      "category": "people"
+    },
+    {
+      "id": "celebrity",
+      "slug": "연예인",
+      "keyword": "연예인 꿈",
+      "category": "people"
+    },
+    {
+      "id": "baby",
+      "slug": "아기",
+      "keyword": "아기 꿈",
+      "category": "people"
+    },
+    {
+      "id": "husband",
+      "slug": "남편",
+      "keyword": "남편 꿈",
+      "category": "people"
+    },
+    {
+      "id": "wife",
+      "slug": "아내",
+      "keyword": "아내 꿈",
+      "category": "people"
+    },
+    {
+      "id": "boyfriend",
+      "slug": "남자친구",
+      "keyword": "남자친구 꿈",
+      "category": "people"
+    },
+    {
+      "id": "girlfriend",
+      "slug": "여자친구",
+      "keyword": "여자친구 꿈",
+      "category": "people"
+    },
+    {
+      "id": "child",
+      "slug": "아이",
+      "keyword": "아이 꿈",
+      "category": "people"
+    },
+    {
+      "id": "sibling",
+      "slug": "형제",
+      "keyword": "형제 꿈",
+      "category": "people"
+    },
+    {
+      "id": "sister",
+      "slug": "자매",
+      "keyword": "자매 꿈",
+      "category": "people"
+    },
+    {
+      "id": "teacher",
+      "slug": "선생님",
+      "keyword": "선생님 꿈",
+      "category": "people"
+    },
+    {
+      "id": "boss",
+      "slug": "상사",
+      "keyword": "상사 꿈",
+      "category": "people"
+    },
+    {
+      "id": "coworker",
+      "slug": "동료",
+      "keyword": "동료 꿈",
+      "category": "people"
+    },
+    {
+      "id": "stranger",
+      "slug": "낯선-사람",
+      "keyword": "낯선 사람 꿈",
+      "category": "people"
+    },
+    {
+      "id": "thief",
+      "slug": "도둑",
+      "keyword": "도둑 꿈",
+      "category": "people"
+    },
+    {
+      "id": "police",
+      "slug": "경찰",
+      "keyword": "경찰 꿈",
+      "category": "people"
+    },
+    {
+      "id": "soldier",
+      "slug": "군인",
+      "keyword": "군인 꿈",
+      "category": "people"
+    },
+    {
+      "id": "doctor",
+      "slug": "의사",
+      "keyword": "의사 꿈",
+      "category": "people"
+    },
+    {
+      "id": "monk",
+      "slug": "스님",
+      "keyword": "스님 꿈",
+      "category": "people"
+    },
+    {
+      "id": "pastor",
+      "slug": "목사",
+      "keyword": "목사 꿈",
+      "category": "people"
+    },
+    {
+      "id": "president",
+      "slug": "대통령",
+      "keyword": "대통령 꿈",
+      "category": "people"
+    },
+    {
+      "id": "zombie",
+      "slug": "좀비",
+      "keyword": "좀비 꿈",
+      "category": "people"
+    },
+    {
+      "id": "alien",
+      "slug": "외계인",
+      "keyword": "외계인 꿈",
+      "category": "people"
+    },
+    {
+      "id": "giant",
+      "slug": "거인",
+      "keyword": "거인 꿈",
+      "category": "people"
+    },
+    {
+      "id": "twins",
+      "slug": "쌍둥이",
+      "keyword": "쌍둥이 꿈",
+      "category": "people"
+    },
+    {
+      "id": "myself",
+      "slug": "나-자신이-나오는",
+      "keyword": "나 자신이 나오는 꿈",
+      "category": "people"
+    },
+    {
+      "id": "acquaintance",
+      "slug": "아는-사람",
+      "keyword": "아는 사람 꿈",
+      "category": "people"
+    },
+    {
+      "id": "old-man",
+      "slug": "노인",
+      "keyword": "노인 꿈",
+      "category": "people"
+    },
+    {
+      "id": "pregnant-woman",
+      "slug": "임신한-여자",
+      "keyword": "임신한 여자 꿈",
+      "category": "people"
+    },
+    {
+      "id": "bride",
+      "slug": "신부",
+      "keyword": "신부 꿈",
+      "category": "people"
+    },
+    {
+      "id": "crowd",
+      "slug": "사람-많은",
+      "keyword": "사람 많은 꿈",
+      "category": "people"
+    },
+    {
+      "id": "school",
+      "slug": "학교",
+      "keyword": "학교 꿈",
+      "category": "places"
+    },
+    {
+      "id": "hospital",
+      "slug": "병원",
+      "keyword": "병원 꿈",
+      "category": "places"
+    },
+    {
+      "id": "church",
+      "slug": "교회",
+      "keyword": "교회 꿈",
+      "category": "places"
+    },
+    {
+      "id": "temple",
+      "slug": "절",
+      "keyword": "절 꿈",
+      "category": "places"
+    },
+    {
+      "id": "office",
+      "slug": "회사",
+      "keyword": "회사 꿈",
+      "category": "places"
+    },
+    {
+      "id": "military",
+      "slug": "군대",
+      "keyword": "군대 꿈",
+      "category": "places"
+    },
+    {
+      "id": "library",
+      "slug": "도서관",
+      "keyword": "도서관 꿈",
+      "category": "places"
+    },
+    {
+      "id": "theater",
+      "slug": "극장",
+      "keyword": "극장 꿈",
+      "category": "places"
+    },
+    {
+      "id": "bathhouse",
+      "slug": "목욕탕",
+      "keyword": "목욕탕 꿈",
+      "category": "places"
+    },
+    {
+      "id": "market",
+      "slug": "시장",
+      "keyword": "시장 꿈",
+      "category": "places"
+    },
+    {
+      "id": "department-store",
+      "slug": "백화점",
+      "keyword": "백화점 꿈",
+      "category": "places"
+    },
+    {
+      "id": "restaurant",
+      "slug": "식당",
+      "keyword": "식당 꿈",
+      "category": "places"
+    },
+    {
+      "id": "bank",
+      "slug": "은행",
+      "keyword": "은행 꿈",
+      "category": "places"
+    },
+    {
+      "id": "courtroom",
+      "slug": "법원",
+      "keyword": "법원 꿈",
+      "category": "places"
+    },
+    {
+      "id": "hotel",
+      "slug": "호텔",
+      "keyword": "호텔 꿈",
+      "category": "places"
+    },
+    {
+      "id": "prison",
+      "slug": "감옥",
+      "keyword": "감옥 꿈",
+      "category": "places"
+    },
+    {
+      "id": "palace",
+      "slug": "궁궐",
+      "keyword": "궁궐 꿈",
+      "category": "places"
+    },
+    {
+      "id": "castle",
+      "slug": "성",
+      "keyword": "성 꿈",
+      "category": "places"
+    },
+    {
+      "id": "airport",
+      "slug": "공항",
+      "keyword": "공항 꿈",
+      "category": "places"
+    },
+    {
+      "id": "station",
+      "slug": "역",
+      "keyword": "역 꿈",
+      "category": "places"
+    },
+    {
+      "id": "amusement-park",
+      "slug": "놀이공원",
+      "keyword": "놀이공원 꿈",
+      "category": "places"
+    },
+    {
+      "id": "beach",
+      "slug": "바닷가",
+      "keyword": "바닷가 꿈",
+      "category": "places"
+    },
+    {
+      "id": "island",
+      "slug": "섬",
+      "keyword": "섬 꿈",
+      "category": "places"
+    },
+    {
+      "id": "foreign-country",
+      "slug": "외국",
+      "keyword": "외국 꿈",
+      "category": "places"
+    },
+    {
+      "id": "hometown",
+      "slug": "고향",
+      "keyword": "고향 꿈",
+      "category": "places"
+    },
+    {
+      "id": "old-house",
+      "slug": "옛집",
+      "keyword": "옛집 꿈",
+      "category": "places"
+    },
+    {
+      "id": "abandoned-house",
+      "slug": "폐가",
+      "keyword": "폐가 꿈",
+      "category": "places"
+    },
+    {
+      "id": "unknown-place",
+      "slug": "낯선-곳",
+      "keyword": "낯선 곳 꿈",
+      "category": "places"
+    },
+    {
+      "id": "toilet",
+      "slug": "화장실",
+      "keyword": "화장실 꿈",
+      "category": "places"
+    },
+    {
+      "id": "kitchen",
+      "slug": "부엌",
+      "keyword": "부엌 꿈",
+      "category": "places"
+    },
+    {
+      "id": "room",
+      "slug": "방",
+      "keyword": "방 꿈",
+      "category": "places"
+    },
+    {
+      "id": "basement",
+      "slug": "지하",
+      "keyword": "지하 꿈",
+      "category": "places"
+    },
+    {
+      "id": "rooftop",
+      "slug": "옥상",
+      "keyword": "옥상 꿈",
+      "category": "places"
+    },
+    {
+      "id": "stairs",
+      "slug": "계단",
+      "keyword": "계단 꿈",
+      "category": "places"
+    },
+    {
+      "id": "elevator",
+      "slug": "엘리베이터",
+      "keyword": "엘리베이터 꿈",
+      "category": "places"
+    },
+    {
+      "id": "bridge",
+      "slug": "다리",
+      "keyword": "다리 꿈",
+      "category": "places"
+    },
+    {
+      "id": "tunnel",
+      "slug": "터널",
+      "keyword": "터널 꿈",
+      "category": "places"
+    },
+    {
+      "id": "maze",
+      "slug": "미로",
+      "keyword": "미로 꿈",
+      "category": "places"
+    },
+    {
+      "id": "road",
+      "slug": "길",
+      "keyword": "길 꿈",
+      "category": "places"
+    },
+    {
+      "id": "crossroad",
+      "slug": "갈림길",
+      "keyword": "갈림길 꿈",
+      "category": "places"
+    },
+    {
+      "id": "garden",
+      "slug": "정원",
+      "keyword": "정원 꿈",
+      "category": "places"
+    },
+    {
+      "id": "farm",
+      "slug": "농장",
+      "keyword": "농장 꿈",
+      "category": "places"
+    },
+    {
+      "id": "grave",
+      "slug": "무덤",
+      "keyword": "무덤 꿈",
+      "category": "places"
+    },
+    {
+      "id": "cemetery",
+      "slug": "묘지",
+      "keyword": "묘지 꿈",
+      "category": "places"
+    },
+    {
+      "id": "funeral-home",
+      "slug": "장례식장",
+      "keyword": "장례식장 꿈",
+      "category": "places"
+    },
+    {
+      "id": "hell",
+      "slug": "지옥",
+      "keyword": "지옥 꿈",
+      "category": "places"
+    },
+    {
+      "id": "heaven",
+      "slug": "천국",
+      "keyword": "천국 꿈",
+      "category": "places"
+    },
+    {
+      "id": "space",
+      "slug": "우주",
+      "keyword": "우주 꿈",
+      "category": "places"
+    },
+    {
+      "id": "god",
+      "slug": "신",
+      "keyword": "신 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "buddha",
+      "slug": "부처",
+      "keyword": "부처 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "jesus",
+      "slug": "예수",
+      "keyword": "예수 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "angel",
+      "slug": "천사",
+      "keyword": "천사 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "devil",
+      "slug": "악마",
+      "keyword": "악마 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "demon",
+      "slug": "마귀",
+      "keyword": "마귀 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "ghost",
+      "slug": "귀신",
+      "keyword": "귀신 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "possessed",
+      "slug": "귀신-들리는",
+      "keyword": "귀신 들리는 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "spirit",
+      "slug": "유령",
+      "keyword": "유령 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "soul",
+      "slug": "영혼",
+      "keyword": "영혼 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "goblin",
+      "slug": "도깨비",
+      "keyword": "도깨비 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "mountain-spirit",
+      "slug": "산신령",
+      "keyword": "산신령 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "dragon-king",
+      "slug": "용왕",
+      "keyword": "용왕 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "fairy",
+      "slug": "선녀",
+      "keyword": "선녀 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "grim-reaper",
+      "slug": "저승사자",
+      "keyword": "저승사자 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "afterlife",
+      "slug": "저승",
+      "keyword": "저승 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "reincarnation",
+      "slug": "환생",
+      "keyword": "환생 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "shaman",
+      "slug": "무당",
+      "keyword": "무당 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "exorcism",
+      "slug": "굿-하는",
+      "keyword": "굿 하는 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "fortune-telling",
+      "slug": "점-보는",
+      "keyword": "점 보는 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "pray",
+      "slug": "기도하는",
+      "keyword": "기도하는 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "ancestral-rite",
+      "slug": "제사",
+      "keyword": "제사 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "bow",
+      "slug": "절하는",
+      "keyword": "절하는 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "talisman",
+      "slug": "부적",
+      "keyword": "부적 꿈",
+      "category": "supernatural"
+    },
+    {
+      "id": "cross",
+      "slug": "십자가",
+      "keyword": "십자가 꿈",
+      "category": "supernatural"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+# events|사건·행동|⚡
+receive-money|돈 받는 꿈
+lose-money|돈 잃는 꿈
+give-money|돈 주는 꿈
+pick-up-money|돈 줍는 꿈
+lottery|복권 당첨 꿈
+gamble|도박 꿈
+exam|시험 꿈
+pass-exam|합격하는 꿈
+fail-exam|불합격하는 꿈
+interview|면접 꿈
+late|지각하는 꿈
+promotion|승진하는 꿈
+fired|해고당하는 꿈
+chased|쫓기는 꿈
+run-away|도망가는 꿈
+hide|숨는 꿈
+trapped|갇히는 꿈
+lost|길 잃는 꿈
+fight|싸우는 꿈
+hit|맞는 꿈
+kill|죽이는 꿈
+murder|살인 꿈
+war|전쟁 꿈
+explosion|폭발 꿈
+shot|총 맞는 꿈
+stabbed|칼에 찔리는 꿈
+arrested|체포되는 꿈
+steal|도둑질하는 꿈
+robbed|도둑맞는 꿈
+lose-item|물건 잃어버리는 꿈
+accident|사고 꿈
+car-accident|교통사고 꿈
+plane-crash|비행기 추락 꿈
+drown|물에 빠지는 꿈
+fall-down|넘어지는 꿈
+swim|수영하는 꿈
+run|달리는 꿈
+drive|운전하는 꿈
+travel|여행 꿈
+move-house|이사하는 꿈
+hike|등산하는 꿈
+fishing|낚시하는 꿈
+hunt|사냥하는 꿈
+wedding|결혼하는 꿈
+proposal|프로포즈 받는 꿈
+divorce|이혼하는 꿈
+funeral|장례식 꿈
+birthday|생일 꿈
+party|파티 꿈
+shopping|쇼핑하는 꿈
+dance|춤추는 꿈
+sing|노래하는 꿈
+cry|우는 꿈
+laugh|웃는 꿈
+kiss|키스하는 꿈
+hug|안는 꿈
+sex|성관계 꿈
+confess|고백하는 꿈
+breakup|이별하는 꿈
+reunion|재회하는 꿈
+cheating|바람피우는 꿈
+partner-cheating|연인이 바람피우는 꿈
+lie|거짓말하는 꿈
+apologize|사과하는 꿈
+scold|혼나는 꿈
+clean|청소하는 꿈
+cook|요리하는 꿈
+study|공부하는 꿈

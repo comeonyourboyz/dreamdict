@@ -1,0 +1,48 @@
+# nature|자연·날씨|🌊
+water|물 꿈
+clear-water|맑은 물 꿈
+dirty-water|더러운 물 꿈
+sea|바다 꿈
+river|강 꿈
+lake|호수 꿈
+waterfall|폭포 꿈
+wave|파도 꿈
+tsunami|쓰나미 꿈
+flood|홍수 꿈
+rain|비 꿈
+snow|눈 내리는 꿈
+hail|우박 꿈
+fog|안개 꿈
+ice|얼음 꿈
+fire|불 꿈
+house-fire|불나는 꿈
+volcano|화산 꿈
+mountain|산 꿈
+cliff|절벽 꿈
+cave|동굴 꿈
+desert|사막 꿈
+forest|숲 꿈
+tree|나무 꿈
+flower|꽃 꿈
+grass|풀 꿈
+field|들판 꿈
+soil|흙 꿈
+mud|진흙 꿈
+stone|돌 꿈
+rock|바위 꿈
+sky|하늘 꿈
+cloud|구름 꿈
+star|별 꿈
+moon|달 꿈
+sun|태양 꿈
+sunrise|해 뜨는 꿈
+sunset|해 지는 꿈
+eclipse|일식 꿈
+rainbow|무지개 꿈
+earthquake|지진 꿈
+lightning|번개 꿈
+thunder|천둥 꿈
+storm|폭풍 꿈
+typhoon|태풍 꿈
+wind|바람 꿈
+drought|가뭄 꿈

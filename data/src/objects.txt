@@ -1,0 +1,61 @@
+# objects|물건·재물|💰
+money|돈 꿈
+paper-money|지폐 꿈
+coin|동전 꿈
+gold|금 꿈
+gold-ring|금반지 꿈
+ring|반지 꿈
+jewel|보석 꿈
+diamond|다이아몬드 꿈
+pearl|진주 꿈
+watch|시계 꿈
+phone|핸드폰 꿈
+computer|컴퓨터 꿈
+tv|텔레비전 꿈
+camera|카메라 꿈
+car|자동차 꿈
+new-car|새 차 꿈
+bicycle|자전거 꿈
+airplane|비행기 꿈
+boat|배 타는 꿈
+train|기차 꿈
+bus|버스 꿈
+house|집 꿈
+new-house|새집 꿈
+key|열쇠 꿈
+door|문 꿈
+window|창문 꿈
+mirror|거울 꿈
+broken-mirror|거울 깨지는 꿈
+broken-glass|유리 깨지는 꿈
+knife|칼 꿈
+gun|총 꿈
+rope|줄 꿈
+ladder|사다리 꿈
+book|책 꿈
+letter|편지 꿈
+photo|사진 꿈
+clothes|옷 꿈
+new-clothes|새 옷 꿈
+shoes|신발 꿈
+lost-shoes|신발 잃어버리는 꿈
+bag|가방 꿈
+wallet|지갑 꿈
+umbrella|우산 꿈
+glasses|안경 꿈
+hat|모자 꿈
+bed|침대 꿈
+chair|의자 꿈
+desk|책상 꿈
+doll|인형 꿈
+toy|장난감 꿈
+candle|촛불 꿈
+lamp|등불 꿈
+trash|쓰레기 꿈
+box|상자 꿈
+gift|선물 받는 꿈
+bouquet|꽃다발 꿈
+makeup|화장하는 꿈
+perfume|향수 꿈
+cigarette|담배 꿈
+alcohol|술 꿈

@@ -1,0 +1,46 @@
+# body|신체·건강|🦷
+teeth-falling|이빨 빠지는 꿈
+broken-tooth|이빨 깨지는 꿈
+tooth-pain|이가 아픈 꿈
+hair-falling|머리카락 빠지는 꿈
+cut-hair|머리 자르는 꿈
+dye-hair|머리 염색하는 꿈
+gray-hair|흰머리 꿈
+bald|대머리 꿈
+blood|피 꿈
+nosebleed|코피 꿈
+hand|손 꿈
+foot|발 꿈
+face|얼굴 꿈
+wrinkle|주름 꿈
+poop|똥 꿈
+pee|오줌 꿈
+stomachache|배 아픈 꿈
+pregnancy|임신하는 꿈
+birth|출산하는 꿈
+injury|다치는 꿈
+wound|상처 꿈
+surgery|수술하는 꿈
+sick|아픈 꿈
+dying|죽는 꿈
+own-death|내가 죽는 꿈
+someone-dies|누가 죽는 꿈
+gain-weight|살찌는 꿈
+lose-weight|살 빠지는 꿈
+naked|알몸 꿈
+grow-tall|키 크는 꿈
+strangled|목 졸리는 꿈
+heart|심장 꿈
+bone|뼈 꿈
+fingernail|손톱 꿈
+toenail|발톱 꿈
+pimple|여드름 꿈
+tears|눈물 꿈
+sweat|땀 꿈
+vomit|토하는 꿈
+blind|눈이 안 보이는 꿈
+mute|목소리 안 나오는 꿈
+flying|날아다니는 꿈
+falling|떨어지는 꿈
+paralysis|가위 눌리는 꿈
+tattoo|타투 꿈

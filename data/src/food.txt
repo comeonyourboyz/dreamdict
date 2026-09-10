@@ -1,0 +1,56 @@
+# food|음식|🍎
+eating|음식 먹는 꿈
+feast|잔치 음식 꿈
+spoiled-food|상한 음식 꿈
+rice|밥 꿈
+raw-rice|쌀 꿈
+rice-cake|떡 꿈
+bread|빵 꿈
+cake|케이크 꿈
+noodle|국수 꿈
+ramen|라면 꿈
+kimchi|김치 꿈
+meat|고기 꿈
+egg|계란 꿈
+milk|우유 꿈
+seafood|해물 꿈
+seaweed|미역 꿈
+laver|김 꿈
+fruit|과일 꿈
+apple|사과 꿈
+pear|배 먹는 꿈
+grape|포도 꿈
+persimmon|감 꿈
+peach|복숭아 꿈
+watermelon|수박 꿈
+melon|참외 꿈
+banana|바나나 꿈
+strawberry|딸기 꿈
+tangerine|귤 꿈
+orange|오렌지 꿈
+plum|자두 꿈
+jujube|대추 꿈
+tomato|토마토 꿈
+pumpkin|호박 꿈
+sweet-potato|고구마 꿈
+potato|감자 꿈
+corn|옥수수 꿈
+chestnut|밤 꿈
+walnut|호두 꿈
+bean|콩 꿈
+vegetable|채소 꿈
+cabbage|배추 꿈
+radish|무 꿈
+garlic|마늘 꿈
+pepper|고추 꿈
+onion|양파 꿈
+mushroom|버섯 꿈
+honey|꿀 꿈
+salt|소금 꿈
+sugar|설탕 꿈
+drink-water|물 마시는 꿈
+drink-alcohol|술 마시는 꿈
+coffee|커피 꿈
+tea|차 마시는 꿈
+medicine|약 꿈
+poison|독 먹는 꿈

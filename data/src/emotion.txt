@@ -1,0 +1,35 @@
+# emotion|감정·상태|💭
+scary|무서운 꿈
+nightmare|악몽
+happy|행복한 꿈
+joyful|기쁜 꿈
+sad|슬픈 꿈
+angry|화나는 꿈
+anxious|불안한 꿈
+lonely|외로운 꿈
+embarrassed|부끄러운 꿈
+regret|후회하는 꿈
+surprised|놀라는 꿈
+frustrated|답답한 꿈
+precognitive|예지몽
+conception|태몽
+lucid|자각몽
+recurring|반복되는 꿈
+same-dream|같은 꿈 반복
+dream-in-dream|꿈 속의 꿈|꿈속의꿈
+remember|기억나는 꿈
+forgotten|기억 안 나는 꿈
+color|색깔 꿈
+black|검은색 꿈
+white|하얀색 꿈
+red|빨간색 꿈
+yellow|노란색 꿈
+blue|파란색 꿈
+golden|금색 꿈
+number|숫자 꿈
+letters|글자 꿈
+sound|소리 꿈
+music|음악 꿈
+smell|냄새 꿈
+darkness|어둠 꿈
+light|빛 꿈

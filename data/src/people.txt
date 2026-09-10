@@ -1,0 +1,43 @@
+# people|사람|👥
+dead-person|죽은 사람 꿈
+ancestor|조상 꿈
+parents|부모님 꿈
+father|아버지 꿈
+mother|어머니 꿈
+grandmother|할머니 꿈
+grandfather|할아버지 꿈
+ex-lover|헤어진 연인 꿈
+first-love|첫사랑 꿈
+crush|짝사랑 꿈
+friend|친구 꿈
+dead-friend|죽은 친구 꿈
+celebrity|연예인 꿈
+baby|아기 꿈
+husband|남편 꿈
+wife|아내 꿈
+boyfriend|남자친구 꿈
+girlfriend|여자친구 꿈
+child|아이 꿈
+sibling|형제 꿈
+sister|자매 꿈
+teacher|선생님 꿈
+boss|상사 꿈
+coworker|동료 꿈
+stranger|낯선 사람 꿈
+thief|도둑 꿈
+police|경찰 꿈
+soldier|군인 꿈
+doctor|의사 꿈
+monk|스님 꿈
+pastor|목사 꿈
+president|대통령 꿈
+zombie|좀비 꿈
+alien|외계인 꿈
+giant|거인 꿈
+twins|쌍둥이 꿈
+myself|나 자신이 나오는 꿈
+acquaintance|아는 사람 꿈
+old-man|노인 꿈
+pregnant-woman|임신한 여자 꿈
+bride|신부 꿈
+crowd|사람 많은 꿈
