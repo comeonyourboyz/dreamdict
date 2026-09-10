@@ -41,6 +41,9 @@
     document.addEventListener('click',function(e){ if(!box.contains(e.target)) dd.classList.remove('on'); });
   }
   document.querySelectorAll('.srch').forEach(bind);
+  // /?q=검색어 딥링크 (schema.org SearchAction) → 히어로 검색창에 채우고 결과 표시
+  try{ var q=new URLSearchParams(location.search).get('q'); var big=document.querySelector('.hero .srch input');
+    if(q&&big){ big.value=q; big.focus(); big.dispatchEvent(new Event('input')); } }catch(e){}
   var rb=document.getElementById('randBtn');
   if(rb) rb.addEventListener('click',function(){ load().then(function(idx){ location.href=idx[Math.floor(Math.random()*idx.length)].u; }); });
 
