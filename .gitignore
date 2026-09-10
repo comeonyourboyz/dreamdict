@@ -1,0 +1,5 @@
+.omc/
+.DS_Store
+node_modules/
+.firebase/
+firebase-debug.log

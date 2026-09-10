@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
+    "trailingSlash": true,
+    "headers": [
+      { "source": "sitemap.xml", "headers": [{ "key": "Content-Type", "value": "application/xml" }] },
+      { "source": "ads.txt", "headers": [{ "key": "Content-Type", "value": "text/plain" }] }
+    ]
+  }
+}

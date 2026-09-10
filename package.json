@@ -1,0 +1,12 @@
+{
+  "name": "dreamdict",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "keywords": "node scripts/build-keywords.js",
+    "validate": "node scripts/validate-data.js",
+    "build": "node scripts/build-site.js",
+    "deploy": "npm run build && firebase deploy --only hosting"
+  }
+}
