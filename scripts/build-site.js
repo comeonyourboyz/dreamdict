@@ -60,6 +60,19 @@ const TAGS = ['재물', '건강', '연애', '가족', '직장', '학업', '인�
 const byTag = new Map(TAGS.map((t) => [t, entries.filter((e) => e.tags.includes(t))]));
 const byVerdict = new Map(Object.keys(VERDICT).map((v) => [v, entries.filter((e) => e.verdict === v)]));
 
+// 광고 카드: 사이트 카드 디자인에 맞춰 라벨 + 둥근 테두리
+const coupang = (id, w, h) => `<script src="https://ads-partners.coupang.com/g.js"></script><script>new PartnersCoupang.G({"id":${id},"template":"carousel","trackingCode":"${SITE.coupang.tracking}","width":"${w}","height":"${h}","tsource":""});</script>`;
+function adCard(kind) {
+  if (kind === 'side') return `<div class="ad-card ad-side-card"><span class="ad-lbl">광고</span>${coupang(SITE.coupang.bottom, '300', '250')}</div>`;
+  if (kind === 'inline') return `<div class="ad-card ad-inline"><span class="ad-lbl">광고</span>${coupang(SITE.coupang.bottom, '100%', '140')}</div>`;
+  return `<div class="ad-card ad-bottom"><span class="ad-lbl">광고</span>${coupang(SITE.coupang.bottom, '100%', '140')}</div>`;
+}
+function sideWidget() {
+  const pop = POPULAR.map((id) => byId.get(id)).filter(Boolean).slice(0, 10);
+  return `<div class="side-card"><div class="side-title">🔥 많이 찾는 꿈</div><div class="side-list">${pop.map((e) => `<a href="${urlDream(e)}"><span>${esc(e.keyword)}</span>${badge(e.verdict)}</a>`).join('')}</div></div>
+<div class="side-card"><div class="side-title">📚 카테고리</div><div class="chips">${categories.map((c) => `<a class="chip sm" href="${urlCat(c)}">${c.emoji} ${esc(c.name)}</a>`).join('')}</div></div>`;
+}
+
 function layout({ title, desc, path, body, ld = [], type = 'website', share }) {
   const url = abs(path);
   const shareObj = share ?? { title, desc, url, image: SITE.ogImage, kakaoKey: SITE.kakaoKey };
@@ -97,13 +110,19 @@ ${ld.map(jsonld).join('\n')}
   <a class="logo" href="/">🌙 ${SITE.name} <span class="en">${SITE.nameEn}</span></a>
   <div class="srch"><input type="search" placeholder="꿈에 뭐가 나왔나요? 예: 뱀, 이빨" aria-label="꿈 검색" autocomplete="off"><span class="ico">🔍</span><div class="dd"></div></div>
 </div></header>
-<aside class="ad-side" id="adL"><script src="https://ads-partners.coupang.com/g.js"></script><script>new PartnersCoupang.G({"id":${SITE.coupang.side},"template":"carousel","trackingCode":"${SITE.coupang.tracking}","width":"160","height":"600","tsource":""});</script></aside>
-<aside class="ad-side" id="adR"><script src="https://ads-partners.coupang.com/g.js"></script><script>new PartnersCoupang.G({"id":${SITE.coupang.side},"template":"carousel","trackingCode":"${SITE.coupang.tracking}","width":"160","height":"600","tsource":""});</script></aside>
-<main class="wrap">
+<div class="page">
+<main class="main">
 ${body}
-<div class="ad-box"><div style="width:100%"><script src="https://ads-partners.coupang.com/g.js"></script><script>new PartnersCoupang.G({"id":${SITE.coupang.bottom},"template":"carousel","trackingCode":"${SITE.coupang.tracking}","width":"100%","height":"140","tsource":""});</script></div></div>
-<p class="disclose">이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+${adCard('bottom')}
 </main>
+<aside class="side">
+  <div class="side-sticky">
+    ${adCard('side')}
+    ${sideWidget()}
+  </div>
+</aside>
+</div>
+<p class="disclose">이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
 <footer class="ftr"><div class="wrap">
   <div><a href="/">홈</a>·${categories.map((c) => `<a href="${urlCat(c)}">${esc(c.name)}</a>`).join('·')}</div>
   <div><a href="/privacy/">개인정보처리방침</a>·<a href="/about/">사이트 소개</a></div>
@@ -175,6 +194,7 @@ function pageDream(e) {
 <h1>${esc(h1)} ${badge(e.verdict)}</h1>
 <p class="lead">${esc(e.summary)}</p>
 <div class="body">${paras(e.meaning)}</div>
+${adCard('inline')}
 <h2>${esc(h2)}</h2>
 ${e.variants.map((v) => `<div class="var"><h3>${esc(v.situation)} ${badge(v.verdict)}</h3><p>${esc(v.meaning)}</p></div>`).join('')}
 <div class="tags">${e.tags.map((t) => `<a class="tag" href="${urlTag(t)}">#${esc(t)}</a>`).join('')}<a class="tag" href="${urlVerdict(e.verdict)}">${VERDICT[e.verdict]} 모아보기</a></div>
