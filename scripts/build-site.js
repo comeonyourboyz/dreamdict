@@ -237,12 +237,12 @@ write('privacy/index.html', pageStatic('/privacy/', '개인정보처리방침', 
 <p><b>쿠키 및 광고</b> — Google AdSense와 쿠팡 파트너스 광고가 게재됩니다. 광고 제공자는 관심 기반 광고를 위해 쿠키를 사용할 수 있으며, <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 해제할 수 있습니다.</p>
 <p><b>호스팅</b> — Firebase Hosting(Google)을 사용하며, 접속 로그(IP, 브라우저 정보)가 서비스 운영 목적으로 자동 수집될 수 있습니다.</p>
 <p><b>공유 기능</b> — 카카오톡·X·페이스북 공유 버튼은 각 서비스의 정책을 따릅니다.</p>
-<p><b>문의</b> — <a href="https://github.com/comeonyourboys/dreamdict" target="_blank" rel="noopener">GitHub 저장소</a>를 통해 연락 주세요.</p>
+<p><b>문의</b> — <a href="https://github.com/comeonyourboyz/dreamdict" target="_blank" rel="noopener">GitHub 저장소</a>를 통해 연락 주세요.</p>
 <p>최종 수정: ${TODAY}</p>`));
 write('about/index.html', pageStatic('/about/', '사이트 소개', `${SITE.name} 소개`, `
 <p><b>${SITE.name}</b>은 꿈에 나온 것을 검색하면 길몽·흉몽 판정과 상황별 해몽을 바로 확인할 수 있는 꿈 해몽 사전입니다. 현재 ${entries.length}개의 꿈을 ${categories.length}개 카테고리로 정리했습니다.</p>
 <p>해몽은 전통 민속의 상징 풀이와 현대 심리학의 해석을 함께 담았습니다. 특정 종교나 미신을 권하지 않으며, 의학·법률·투자 판단의 근거로 사용될 수 없습니다. 재미로, 그리고 내 마음을 돌아보는 계기로 가볍게 활용해 주세요.</p>
-<p>잘못된 내용이나 추가하고 싶은 꿈이 있다면 <a href="https://github.com/comeonyourboys/dreamdict" target="_blank" rel="noopener">GitHub</a>로 알려 주세요.</p>`));
+<p>잘못된 내용이나 추가하고 싶은 꿈이 있다면 <a href="https://github.com/comeonyourboyz/dreamdict" target="_blank" rel="noopener">GitHub</a>로 알려 주세요.</p>`));
 write('404.html', layout({ title: `페이지를 찾을 수 없어요 — ${SITE.name}`, desc: SITE.desc, path: '/404.html', body: `<div class="empty" style="padding:80px 0"><div style="font-size:60px">🌙</div><h1 style="font-size:22px;margin:10px 0">그런 꿈은 아직 없어요</h1><p>위 검색창에서 다른 단어로 찾아보세요.</p><p style="margin-top:16px"><a class="chip" href="/">홈으로</a></p></div>` }));
 
 // 검색 인덱스: k=keyword, u=url, c=category name, s=searchTerms

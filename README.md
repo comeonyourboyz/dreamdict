@@ -4,7 +4,7 @@
 
 - 사이트: https://dreamdict.web.app
 - 호스팅: Firebase Hosting (프로젝트 `dreamdict`)
-- 소스: https://github.com/comeonyourboys/dreamdict
+- 소스: https://github.com/comeonyourboyz/dreamdict
 
 ## 구조
 
