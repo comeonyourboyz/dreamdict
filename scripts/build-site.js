@@ -97,11 +97,9 @@ ${ld.map(jsonld).join('\n')}
   <a class="logo" href="/">🌙 ${SITE.name} <span class="en">${SITE.nameEn}</span></a>
   <div class="srch"><input type="search" placeholder="꿈에 뭐가 나왔나요? 예: 뱀, 이빨" aria-label="꿈 검색" autocomplete="off"><span class="ico">🔍</span><div class="dd"></div></div>
 </div></header>
-<aside class="ad-side" id="adL"><script src="https://ads-partners.coupang.com/g.js"></script><script>new PartnersCoupang.G({"id":${SITE.coupang.side},"template":"carousel","trackingCode":"${SITE.coupang.tracking}","width":"160","height":"600","tsource":""});</script></aside>
-<aside class="ad-side" id="adR"><script src="https://ads-partners.coupang.com/g.js"></script><script>new PartnersCoupang.G({"id":${SITE.coupang.side},"template":"carousel","trackingCode":"${SITE.coupang.tracking}","width":"160","height":"600","tsource":""});</script></aside>
 <main class="wrap">
 ${body}
-<div class="ad-box"><div style="width:100%"><script src="https://ads-partners.coupang.com/g.js"></script><script>new PartnersCoupang.G({"id":${SITE.coupang.bottom},"template":"carousel","trackingCode":"${SITE.coupang.tracking}","width":"100%","height":"140","tsource":""});</script></div></div>
+<div class="ad-box"><div class="ad-inner"><script src="https://ads-partners.coupang.com/g.js"></script><script>new PartnersCoupang.G({"id":${SITE.coupang.bottom},"template":"carousel","trackingCode":"${SITE.coupang.tracking}","width":"100%","height":"140","tsource":""});</script></div></div>
 <p class="disclose">이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
 </main>
 <footer class="ftr"><div class="wrap">
