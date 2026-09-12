@@ -52,7 +52,7 @@
   window.shareKakao=function(){
     if(!window.Kakao){alert('잠시 후 다시 시도해 주세요.');return;}
     try{ if(!Kakao.isInitialized()) Kakao.init(S.kakaoKey); }catch(e){}
-    Kakao.Share.sendDefault({objectType:'feed',content:{title:S.title,description:S.desc,imageUrl:S.image,imageWidth:800,imageHeight:400,link:{mobileWebUrl:S.url,webUrl:S.url}},
+    Kakao.Share.sendDefault({objectType:'feed',content:{title:S.title,description:S.desc,imageUrl:S.image,imageWidth:1200,imageHeight:630,link:{mobileWebUrl:S.url,webUrl:S.url}},
       buttons:[{title:'해몽 보러 가기',link:{mobileWebUrl:S.url,webUrl:S.url}}]});
   };
   window.shareX=function(){ window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(S.title+'\n'+S.url),'_blank'); };
