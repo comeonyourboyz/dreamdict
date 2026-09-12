@@ -1,6 +1,7 @@
 // 정적 사이트 빌드: data/keywords.json + data/entries/*.json → public/
 import { readdirSync, readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, cpSync } from 'node:fs';
 import { join, dirname } from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -18,6 +19,7 @@ const SITE = {
   gsv: '8nUCFYxTph7TOTN0ZC0zWvamYgyQMd026qCLSBL9YgE', // Search Console (tangerin10과 동일 계정 토큰; 속성 추가는 콘솔에서)
 };
 const TODAY = new Date().toISOString().slice(0, 10);
+const ASSET_V = createHash('md5').update(readFileSync(join(root, 'site', 'style.css')) ).update(readFileSync(join(root, 'site', 'app.js'))).digest('hex').slice(0, 8);
 const VERDICT = { good: '길몽', bad: '흉몽', mixed: '상황에 따라', neutral: '중립' };
 const POPULAR = ['snake','teeth-falling','poop','dead-person','fire','water','money','pig','fish','baby','ex-lover','flying','chased','blood','dragon','gold','car-accident','wedding','pregnancy','hair-falling','tiger','house','ghost','exam','falling'];
 
@@ -87,7 +89,7 @@ ${SITE.gsv ? `<meta name="google-site-verification" content="${SITE.gsv}">` : ''
 <meta name="twitter:image" content="${SITE.ogImage}">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v=${ASSET_V}">
 ${ld.map(jsonld).join('\n')}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsense}" crossorigin="anonymous"></script>
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"></script>
@@ -103,12 +105,12 @@ ${body}
 <p class="disclose">이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
 </main>
 <footer class="ftr"><div class="wrap">
-  <div><a href="/">홈</a>·${categories.map((c) => `<a href="${urlCat(c)}">${esc(c.name)}</a>`).join('·')}</div>
-  <div><a href="/privacy/">개인정보처리방침</a>·<a href="/about/">사이트 소개</a></div>
+  <div class="ftr-links"><a href="/">홈</a>${categories.map((c) => `<a href="${urlCat(c)}">${esc(c.name)}</a>`).join('')}</div>
+  <div class="ftr-links"><a href="/privacy/">개인정보처리방침</a><a href="/about/">사이트 소개</a></div>
   <div>해몽은 전통 민속과 심리학적 해석을 참고한 것으로 재미로 보아 주세요. © ${TODAY.slice(0, 4)} ${SITE.name}</div>
 </div></footer>
 <script>window.__SHARE__=${JSON.stringify(shareObj).replace(/</g, '\\u003c')};</script>
-<script src="/assets/app.js" defer></script>
+<script src="/assets/app.js?v=${ASSET_V}" defer></script>
 </body>
 </html>`;
 }
