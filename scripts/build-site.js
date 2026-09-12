@@ -173,6 +173,7 @@ function pageDream(e) {
 <h1>${esc(h1)} ${badge(e.verdict)}</h1>
 <p class="lead">${esc(e.summary)}</p>
 <div class="body">${paras(e.meaning)}</div>
+<div class="ad-mid"><div class="ad-mid-inner"><script src="https://ads-partners.coupang.com/g.js"></script><script>new PartnersCoupang.G({"id":${SITE.coupang.bottom},"template":"carousel","trackingCode":"${SITE.coupang.tracking}","width":"300","height":"250","tsource":""});</script></div></div>
 <h2>${esc(h2)}</h2>
 ${e.variants.map((v) => `<div class="var"><h3>${esc(v.situation)} ${badge(v.verdict)}</h3><p>${esc(v.meaning)}</p></div>`).join('')}
 <div class="tags">${e.tags.map((t) => `<a class="tag" href="${urlTag(t)}">#${esc(t)}</a>`).join('')}<a class="tag" href="${urlVerdict(e.verdict)}">${VERDICT[e.verdict]} 모아보기</a></div>
