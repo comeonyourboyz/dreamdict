@@ -14,7 +14,7 @@ const SITE = {
   ogImage: 'https://dreamdict.web.app/og-image.png',
   launch: '2026-09-10',
   adsense: 'ca-pub-5479403345572412',
-  kakaoKey: '455b415360c00b8af8c31a830fc33ef3',
+  kakaoKey: '20fa9624337a5f9b11b0fe995708b754',
   coupang: { tracking: 'AF7330023', side: 1024318, bottom: 1017186 },
   gsv: '8nUCFYxTph7TOTN0ZC0zWvamYgyQMd026qCLSBL9YgE', // Search Console (tangerin10과 동일 계정 토큰; 속성 추가는 콘솔에서)
 };
