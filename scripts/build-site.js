@@ -16,7 +16,7 @@ const SITE = {
   adsense: 'ca-pub-5479403345572412',
   kakaoKey: '20fa9624337a5f9b11b0fe995708b754',
   coupang: { tracking: 'AF7330023', side: 1024318, bottom: 1017186 },
-  gsv: '8nUCFYxTph7TOTN0ZC0zWvamYgyQMd026qCLSBL9YgE', // Search Console (tangerin10과 동일 계정 토큰; 속성 추가는 콘솔에서)
+  gsv: ['8nUCFYxTph7TOTN0ZC0zWvamYgyQMd026qCLSBL9YgE', 'WjzFs7iu4kDSzcJKM5QyAqGDAqx9J1P0uj-Ry4z1_NU'], // Search Console 인증 토큰(계정별). 어느 계정으로도 인증되게 모두 둔다
 };
 const TODAY = new Date().toISOString().slice(0, 10);
 const ASSET_V = createHash('md5').update(readFileSync(join(root, 'site', 'style.css')) ).update(readFileSync(join(root, 'site', 'app.js'))).digest('hex').slice(0, 8);
@@ -88,7 +88,7 @@ function layout({ title, desc, path, body, ld = [], type = 'website', share }) {
 <link rel="canonical" href="${url}">
 <meta name="robots" content="${isNoindex(path) ? 'noindex, follow' : 'index, follow'}">
 <meta name="theme-color" content="#1a1a2e">
-${SITE.gsv ? `<meta name="google-site-verification" content="${SITE.gsv}">` : ''}
+${SITE.gsv.map((t) => `<meta name="google-site-verification" content="${t}">`).join('\n')}
 <meta property="og:type" content="${type}">
 <meta property="og:site_name" content="${SITE.name}">
 <meta property="og:title" content="${esc(title)}">
@@ -104,6 +104,7 @@ ${SITE.gsv ? `<meta name="google-site-verification" content="${SITE.gsv}">` : ''
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${SITE.ogImage}">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="/favicon.png" sizes="512x512"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/assets/style.css?v=${ASSET_V}">
 ${ld.map(jsonld).join('\n')}
