@@ -14,12 +14,10 @@ const SITE = {
   ogImage: 'https://dreamdict.web.app/og-image.png',
   launch: '2026-09-10',
   kakaoKey: '20fa9624337a5f9b11b0fe995708b754',
-  adfit: 'DAN-SS5YjNtLYifw5Fi0', // 카카오 애드핏 광고 단위 (300x250)
+  adsense: 'ca-pub-5479403345572412', // 2026-10-13 애드센스 승인. 자동 광고라 스크립트만 둔다
   gsv: ['8nUCFYxTph7TOTN0ZC0zWvamYgyQMd026qCLSBL9YgE', 'WjzFs7iu4kDSzcJKM5QyAqGDAqx9J1P0uj-Ry4z1_NU'], // Search Console 인증 토큰(계정별). 어느 계정으로도 인증되게 모두 둔다
 };
 const TODAY = new Date().toISOString().slice(0, 10);
-// 카카오 애드핏 300x250 한 칸을 본문 맨 아래에 둔다. 단위 ID 가 비어 있으면 아무것도 출력하지 않는다.
-const adfit = (unit) => unit ? `<div class="ad-box"><div class="ad-inner"><ins class="kakao_ad_area" style="display:none;" data-ad-unit="${unit}" data-ad-width="300" data-ad-height="250"></ins><script async src="https://t1.kakaocdn.net/kas/static/ba.min.js"></script></div></div>` : '';
 const ASSET_V = createHash('md5').update(readFileSync(join(root, 'site', 'style.css')) ).update(readFileSync(join(root, 'site', 'app.js'))).digest('hex').slice(0, 8);
 // 제목 픽셀폭 근사(한글 16px, 그 외 8px) — 모바일 잘림선 485px 안에 맞춘다.
 const titlePx = (s) => [...s].reduce((a, c) => a + (c.codePointAt(0) > 0x1100 ? 16 : 8), 0);
@@ -109,6 +107,7 @@ ${SITE.gsv.map((t) => `<meta name="google-site-verification" content="${t}">`).j
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/assets/style.css?v=${ASSET_V}">
 ${ld.map(jsonld).join('\n')}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsense}" crossorigin="anonymous"></script>
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"></script>
 </head>
 <body>
@@ -118,7 +117,6 @@ ${ld.map(jsonld).join('\n')}
 </div></header>
 <main class="wrap">
 ${body}
-${adfit(SITE.adfit)}
 </main>
 <footer class="ftr"><div class="wrap">
   <div class="ftr-links"><a href="/">홈</a>${categories.map((c) => `<a href="${urlCat(c)}">${esc(c.name)}</a>`).join('')}</div>
@@ -250,7 +248,7 @@ for (const t of tagsUsed) write(`tag/${t}/index.html`, pageTag(t));
 for (const v of Object.keys(VERDICT)) write(`verdict/${v}/index.html`, pageVerdict(v));
 write('privacy/index.html', pageStatic('/privacy/', '개인정보처리방침', `꿈해몽 사전이 수집하는 정보, 쿠키와 광고 처리 방침, 검색어 저장 여부를 정리했습니다. 회원가입 없이 이용하며 검색 기록은 서버에 저장하지 않습니다.`, `
 <p><b>${SITE.name}</b>(dreamdict.web.app)은 회원가입 없이 이용하는 정보 제공 사이트로, 이름·이메일 등 개인정보를 직접 수집하지 않습니다.</p>
-<p><b>쿠키 및 광고</b> — 카카오 애드핏 광고가 게재됩니다. 카카오는 관심 기반(맞춤형) 광고를 위해 쿠키 등으로 방문 기록을 수집할 수 있으며, <a href="https://info.ad.daum.net/optoutko.do" target="_blank" rel="noopener">카카오 맞춤형 광고 안내</a>에서 맞춤형 광고를 거부할 수 있습니다. 거부해도 광고는 계속 표시되지만 관련성이 낮은 광고가 나올 수 있습니다.</p>
+<p><b>쿠키 및 광고</b> — Google AdSense 광고가 게재됩니다. 광고 제공자는 관심 기반 광고를 위해 쿠키를 사용할 수 있으며, <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 해제할 수 있습니다.</p>
 <p><b>호스팅</b> — Firebase Hosting(Google)을 사용하며, 접속 로그(IP, 브라우저 정보)가 서비스 운영 목적으로 자동 수집될 수 있습니다.</p>
 <p><b>공유 기능</b> — 카카오톡·X·페이스북 공유 버튼은 각 서비스의 정책을 따릅니다.</p>
 <p><b>문의</b> — 개인정보 처리에 관한 문의는 <a href="/contact/">문의하기</a> 페이지의 이메일로 보내 주세요.</p>
