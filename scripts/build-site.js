@@ -74,6 +74,9 @@ const TAGS = ['재물', '건강', '연애', '가족', '직장', '학업', '인�
 const byTag = new Map(TAGS.map((t) => [t, entries.filter((e) => e.tags.includes(t))]));
 const byVerdict = new Map(Object.keys(VERDICT).map((v) => [v, entries.filter((e) => e.verdict === v)]));
 
+// 게시자 콘텐츠가 없거나 적은 화면(404·개인정보처리방침·문의·소개)에는 광고 스크립트를 넣지 않는다(애드센스 정책).
+// 계정 소유 확인은 google-adsense-account 메타로 모든 페이지에 유지한다.
+const NO_AD_PATHS = ['/404.html', '/privacy/', '/contact/', '/about/'];
 function layout({ title, desc, path, body, ld = [], type = 'website', share }) {
   const url = abs(path);
   const shareObj = share ?? { title, desc, url, image: SITE.ogImage, kakaoKey: SITE.kakaoKey };
@@ -88,6 +91,7 @@ function layout({ title, desc, path, body, ld = [], type = 'website', share }) {
 <meta name="robots" content="${isNoindex(path) ? 'noindex, follow' : 'index, follow'}">
 <meta name="theme-color" content="#1a1a2e">
 ${SITE.gsv.map((t) => `<meta name="google-site-verification" content="${t}">`).join('\n')}
+<meta name="google-adsense-account" content="${SITE.adsense}">
 <meta property="og:type" content="${type}">
 <meta property="og:site_name" content="${SITE.name}">
 <meta property="og:title" content="${esc(title)}">
@@ -107,8 +111,7 @@ ${SITE.gsv.map((t) => `<meta name="google-site-verification" content="${t}">`).j
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/assets/style.css?v=${ASSET_V}">
 ${ld.map(jsonld).join('\n')}
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsense}" crossorigin="anonymous"></script>
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"></script>
+${NO_AD_PATHS.includes(path) ? '' : `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsense}" crossorigin="anonymous"></script>\n`}<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"></script>
 </head>
 <body>
 <header class="hdr"><div class="wrap">
@@ -246,9 +249,15 @@ for (const e of entries) write(`dream/${e.slug}/index.html`, pageDream(e));
 const tagsUsed = TAGS.filter((t) => byTag.get(t).length);
 for (const t of tagsUsed) write(`tag/${t}/index.html`, pageTag(t));
 for (const v of Object.keys(VERDICT)) write(`verdict/${v}/index.html`, pageVerdict(v));
-write('privacy/index.html', pageStatic('/privacy/', '개인정보처리방침', `꿈해몽 사전이 수집하는 정보, 쿠키와 광고 처리 방침, 검색어 저장 여부를 정리했습니다. 회원가입 없이 이용하며 검색 기록은 서버에 저장하지 않습니다.`, `
-<p><b>${SITE.name}</b>(dreamdict.web.app)은 회원가입 없이 이용하는 정보 제공 사이트로, 이름·이메일 등 개인정보를 직접 수집하지 않습니다.</p>
-<p><b>쿠키 및 광고</b> — Google AdSense 광고가 게재됩니다. 광고 제공자는 관심 기반 광고를 위해 쿠키를 사용할 수 있으며, <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google 광고 설정</a>에서 맞춤 광고를 해제할 수 있습니다.</p>
+write('privacy/index.html', pageStatic('/privacy/', '개인정보처리방침', `꿈해몽 사전이 수집하는 정보, Google 광고 쿠키와 맞춤 광고 거부 방법, 검색어 저장 여부를 정리했습니다. 회원가입 없이 이용하며 검색 기록은 서버에 저장하지 않습니다.`, `
+<p><b>${SITE.name}</b>(dreamdict.web.app)은 회원가입 없이 이용하는 정보 제공 사이트입니다. 운영자는 이름·이메일 등 개인정보를 직접 수집하지 않으며, 검색창에 입력한 검색어도 서버로 보내거나 저장하지 않습니다. 다만 아래와 같이 광고·호스팅 서비스를 제공하는 제3자가 쿠키나 접속 로그로 일부 정보를 수집할 수 있습니다.</p>
+<h2>광고와 쿠키</h2>
+<p>이 사이트에는 Google AdSense 광고가 게재됩니다.</p>
+<p>Google을 포함한 제3자 공급업체는 쿠키를 사용하여 사용자가 이 웹사이트나 다른 웹사이트를 이전에 방문한 기록을 바탕으로 광고를 게재합니다.</p>
+<p>Google은 광고 쿠키를 사용하여 Google과 파트너가 이 사이트 또는 인터넷의 다른 사이트 방문 기록을 바탕으로 사용자에게 맞춤 광고를 게재할 수 있도록 합니다.</p>
+<p>사용자는 <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 광고 설정(https://adssettings.google.com)</a>에서 맞춤 광고를 사용 중지할 수 있습니다. 또한 <a href="https://www.aboutads.info/choices" target="_blank" rel="noopener">www.aboutads.info/choices</a>에서 제3자 공급업체가 맞춤 광고에 쿠키를 사용하는 것을 거부할 수 있습니다.</p>
+<p>Google이 이 정보를 어떻게 사용하는지는 <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google 파트너 사이트 데이터 사용 안내</a>에서 확인할 수 있습니다. 브라우저 설정에서 쿠키를 차단하거나 삭제할 수도 있습니다.</p>
+<h2>그 밖의 정보</h2>
 <p><b>호스팅</b> — Firebase Hosting(Google)을 사용하며, 접속 로그(IP, 브라우저 정보)가 서비스 운영 목적으로 자동 수집될 수 있습니다.</p>
 <p><b>공유 기능</b> — 카카오톡·X·페이스북 공유 버튼은 각 서비스의 정책을 따릅니다.</p>
 <p><b>문의</b> — 개인정보 처리에 관한 문의는 <a href="/contact/">문의하기</a> 페이지의 이메일로 보내 주세요.</p>
@@ -273,12 +282,15 @@ write('contact/index.html', pageStatic('/contact/', '문의하기', '꿈해몽 �
 <p>서울에서 일하는 소프트웨어 개발자가 업무 외 시간에 만들고 있습니다. 사업자 등록을 한 상업 사이트가 아니며, 운영 비용은 광고 수익으로 충당합니다.</p>
 <p>사이트가 어떤 자료를 근거로 만들어졌는지는 <a href="/about/">사이트 소개</a>에, 수집하는 정보는 <a href="/privacy/">개인정보처리방침</a>에 정리해 두었습니다.</p>
 `));
-write('about/index.html', pageStatic('/about/', '사이트 소개', `꿈해몽 사전이 어떤 자료를 바탕으로 해몽을 정리하는지, 길몽·흉몽 판정 기준은 무엇인지, 어떤 한계가 있는지 밝힙니다. 꿈 480개를 10개 카테고리로 정리했습니다.`, `
+write('about/index.html', pageStatic('/about/', '사이트 소개', `꿈해몽 사전의 해몽을 어떻게 만들었는지(AI 초안과 형식 검사), 길몽·흉몽 판정 기준은 무엇인지, 어떤 한계가 있는지 밝힙니다. 꿈 ${entries.length}개를 ${categories.length}개 카테고리로 정리했습니다.`, `
 <p><b>${SITE.name}</b>은 꿈에 나온 것을 검색하면 길몽·흉몽 판정과 상황별 해몽을 바로 확인할 수 있는 꿈 해몽 사전입니다. 지금 ${entries.length}개의 꿈을 ${categories.map((c) => esc(c.name)).join(', ')} ${categories.length}개 카테고리로 나눠 정리했습니다.</p>
 
 <h2>한 페이지에 담은 것</h2>
 <p>꿈 하나마다 한 줄 요약, 판정, 전체 의미 풀이, 그리고 <b>상황별 해몽</b>을 둡니다. 같은 뱀 꿈이라도 뱀에게 물리는 꿈, 뱀을 죽이는 꿈, 뱀에게 쫓기는 꿈, 흰 뱀 꿈은 풀이가 서로 다르기 때문에 상황을 나눠 따로 적었습니다. 페이지 아래에는 함께 찾아보면 좋은 관련 꿈과 태그를 붙였습니다.</p>
-<p>해몽은 전통 민속의 상징 풀이와 현대 심리학의 해석을 함께 담았습니다.</p>
+
+<h2>어떻게 만들었나</h2>
+<p>해몽 문장은 운영자가 직접 쓰거나 해몽 전문가가 감수한 것이 <b>아닙니다</b>. 운영자가 사람들이 많이 찾는 꿈 키워드 목록과 카테고리를 먼저 정하고, 항목마다 요약·판정·풀이·상황별 해몽을 어떤 형식과 길이로 쓸지 규칙을 정한 뒤, <b>AI(대형 언어 모델)</b>에게 그 규칙에 맞춰 초안을 쓰게 했습니다. AI는 우리나라에서 널리 전해지는 민속적 상징 풀이와 심리학적 해석을 바탕으로 문장을 만들었습니다.</p>
+<p>초안은 검사 스크립트로 빠진 항목, 글자 수, 판정 값, 관련 꿈 링크가 실제로 있는 꿈인지 같은 <b>형식</b>만 확인했습니다. 해몽 문장 하나하나를 특정 해몽 문헌과 대조해 검증하지는 않았습니다. 해몽은 원래 정답이 정해진 정보가 아니고 책이나 지역마다 풀이가 다르니, 이 사이트의 풀이도 여러 해석 가운데 하나로 읽어 주세요. 잘못된 풀이를 알려 주시면 확인해 고칩니다.</p>
 
 <h2>판정은 어떻게 정했나</h2>
 <p>판정은 길몽·흉몽·상황에 따라·중립 네 가지입니다. 지금 수록된 꿈 가운데 <b>상황에 따라</b>가 ${entries.filter((e) => e.verdict === 'mixed').length}개로 가장 많고, 길몽 ${entries.filter((e) => e.verdict === 'good').length}개, 흉몽 ${entries.filter((e) => e.verdict === 'bad').length}개, 중립 ${entries.filter((e) => e.verdict === 'neutral').length}개입니다.</p>
