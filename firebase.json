@@ -53,6 +53,15 @@
             "value": "text/plain"
           }
         ]
+      },
+      {
+        "source": "/promo/**",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex"
+          }
+        ]
       }
     ]
   }
