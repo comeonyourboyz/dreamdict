@@ -10,7 +10,7 @@ const SITE = {
   url: 'https://dreamdict.web.app',
   name: '꿈해몽 사전',
   nameEn: 'DreamDict',
-  desc: '뱀 꿈, 이빨 빠지는 꿈, 똥 꿈… 꿈에 나온 것을 검색하면 길몽·흉몽 판정과 상황별 해몽을 바로 알려주는 꿈 해몽 사전.',
+  desc: '꿈에 나온 것을 검색하면 길몽·흉몽 판정과 상황별 해몽을 바로 알려드리는 꿈해몽 사전입니다.',
   ogImage: 'https://dreamdict.web.app/og-image.png',
   launch: '2026-09-10',
   kakaoKey: '20fa9624337a5f9b11b0fe995708b754',
@@ -150,7 +150,7 @@ function pageIndex() {
 <div class="body"><p>같은 뱀 꿈이라도 뱀이 나를 물었는지, 집으로 들어왔는지, 색이 무엇이었는지에 따라 해석이 갈립니다. 이 사전은 꿈 하나마다 기본 해석과 함께 <b>상황별 변형</b>을 따로 정리해, 내 꿈에 가장 가까운 풀이를 찾을 수 있게 했습니다.</p>
 <p>해몽은 전통 민속의 상징 풀이와 현대 심리학의 해석을 함께 담았습니다. 길몽이라 해서 로또를 사거나, 흉몽이라 해서 걱정하실 필요는 없습니다. 지금 내 마음이 어디에 머물러 있는지 들여다보는 계기로 가볍게 활용해 주세요.</p></div></section>`;
   const ld = [
-    { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, url: SITE.url, description: SITE.desc, inLanguage: 'ko',
+    { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, alternateName: ['꿈해몽사전', 'DreamDict'], url: `${SITE.url}/`, description: SITE.desc, inLanguage: 'ko',
       potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: `${SITE.url}/?q={search_term_string}` }, 'query-input': 'required name=search_term_string' } },
   ];
   return layout({ title: `${SITE.name} — 뱀 꿈, 이빨 빠지는 꿈, 똥 꿈 해몽 검색`, desc: SITE.desc, path: '/', body, ld });
