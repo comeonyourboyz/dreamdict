@@ -57,12 +57,48 @@ const urlCat = (c) => `/category/${c.id}/`;
 const urlTag = (t) => encodeURI(`/tag/${t}/`);
 const urlVerdict = (v) => `/verdict/${v}/`;
 const abs = (p) => SITE.url + p;
-const badge = (v) => `<span class="badge ${v}">${VERDICT[v]}</span>`;
+// 판정 표기: 색은 길몽 세이지·흉몽 장밋빛·상황에 따라 라벤더·중립 회청(style.css 토큰)
+const VC = { good: 'g', bad: 'b', mixed: 'm', neutral: 'n' };
+const VORDER = ['good', 'bad', 'mixed', 'neutral'];
+const vtext = (v) => `<span class="v v-${VC[v]}">${VERDICT[v]}</span>`;
+const vpill = (v) => `<span class="verdict v-${VC[v]}"><i class="dot" aria-hidden="true"></i>${VERDICT[v]}</span>`;
+const short = (kw) => kw.replace(/\s꿈$/, '');
 const paras = (t) => t.split(/\n{2,}/).map((p) => `<p>${esc(p.trim())}</p>`).join('');
 const jsonld = (o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`;
 let htmlPages = 0;
 const write = (rel, html) => { const p = join(OUT, rel); mkdirSync(dirname(p), { recursive: true }); writeFileSync(p, html); if (rel.endsWith('.html') && rel !== '404.html') htmlPages++; };
-const rows = (list) => list.map((e) => `<a class="row" href="${urlDream(e)}"><div style="flex:1"><div class="kw">${esc(e.keyword)}</div><div class="sm">${esc(e.summary)}</div></div>${badge(e.verdict)}</a>`).join('');
+const countV = (list) => { const o = {}; for (const x of list) o[x.verdict] = (o[x.verdict] ?? 0) + 1; return o; };
+// 판정 분포 막대 + 범례. label 은 스크린리더용 설명 앞부분
+function tally(list, label, linked = false) {
+  const c = countV(list); const vs = VORDER.filter((v) => c[v]);
+  const desc = `${label} ${list.length}개 중 ${vs.map((v) => `${VERDICT[v]} ${c[v]}`).join(', ')}`;
+  return `<div class="tally" role="img" aria-label="${esc(desc)}">${vs.map((v) => `<i style="flex:${c[v]}" class="bg-${VC[v]}"></i>`).join('')}</div>
+<div class="tally-l">${vs.map((v) => linked ? `<a class="v-${VC[v]}" href="${urlVerdict(v)}">${VERDICT[v]} ${c[v]}</a>` : `<span class="v-${VC[v]}">${VERDICT[v]} ${c[v]}</span>`).join('')}</div>`;
+}
+// 꿈 카드(요약 포함) — 목록·다른 꿈 섹션 공용
+const cards = (list, cls = '') => `<div class="cards${cls}">${list.map((e) => `<a href="${urlDream(e)}"><span class="row"><span class="ttl">${esc(e.keyword)}</span>${vtext(e.verdict)}</span><span class="sm">${esc(e.summary)}</span></a>`).join('')}</div>`;
+const leaders = (list, cur) => list.map((e) => `<li><a href="${urlDream(e)}"${e === cur ? ' aria-current="page" class="is-cur"' : ''}><span class="nm">${esc(short(e.keyword))}</span><span class="ld" aria-hidden="true"></span>${vtext(e.verdict)}</a></li>`).join('');
+const SEARCH_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>';
+const searchBox = (cls, ph, id) => `<div class="srch ${cls}" role="search"><label class="sr" for="${id}">꿈 검색</label>${SEARCH_ICON}<input id="${id}" type="search" placeholder="${ph}" autocomplete="off"><div class="dd"></div></div>`;
+
+// 왼쪽 색인: 카테고리 + (현재 카테고리의 꿈 | 판정·주제 바로가기)
+function sideIndex({ cat = null, entry = null } = {}) {
+  let h = `<div class="idx-h">카테고리 <span>${entries.length}</span></div>
+<ul class="cats">${categories.map((c) => `<li><a href="${urlCat(c)}"${cat && c.id === cat.id ? ' aria-current="true"' : ''}>${esc(c.name)}<span class="n">${(byCat.get(c.id) ?? []).length}</span></a></li>`).join('')}</ul>`;
+  if (cat && entry) {
+    const list = byCat.get(cat.id) ?? []; const c = countV(list);
+    h += `<div class="idx-h">${esc(cat.name)}의 꿈 <span>${list.length}</span></div>
+<div class="vfilter">${VORDER.filter((v) => c[v]).map((v) => `<span><i class="dot bg-${VC[v]}" aria-hidden="true"></i> ${VERDICT[v]} ${c[v]}</span>`).join('')}</div>
+<ul class="dlist">${leaders(list, entry)}</ul>
+<a class="dl-all" href="${urlCat(cat)}">${esc(cat.name)} 꿈 ${list.length}개 모두 보기</a>`;
+  } else {
+    h += `<div class="idx-h">판정별 <span>${entries.length}</span></div>
+<ul class="cats">${VORDER.map((v) => `<li><a href="${urlVerdict(v)}"><i class="dot bg-${VC[v]}" aria-hidden="true"></i>${VERDICT[v]}<span class="n">${(byVerdict.get(v) ?? []).length}</span></a></li>`).join('')}</ul>
+<div class="idx-h">주제별</div>
+<div class="taglist">${TAGS.filter((t) => byTag.get(t).length).map((t) => `<a href="${urlTag(t)}">#${t} <span>${byTag.get(t).length}</span></a>`).join('')}</div>`;
+  }
+  return `<nav class="index" aria-label="꿈 색인">${h}</nav>`;
+}
 
 const VERDICT_DESC = {
   good: '재물·행운·좋은 인연을 예고한다고 전해지는 길몽들을 모았습니다.',
@@ -77,7 +113,13 @@ const byVerdict = new Map(Object.keys(VERDICT).map((v) => [v, entries.filter((e)
 // 게시자 콘텐츠가 없거나 적은 화면(404·개인정보처리방침·문의·소개)에는 광고 스크립트를 넣지 않는다(애드센스 정책).
 // 계정 소유 확인은 google-adsense-account 메타로 모든 페이지에 유지한다.
 const NO_AD_PATHS = ['/404.html', '/privacy/', '/contact/', '/about/'];
-function layout({ title, desc, path, body, ld = [], type = 'website', share }) {
+const TOOLS = [
+  ['꿈해몽 사전', 'https://dreamdict.web.app'], ['내 연봉 순위', 'https://salaryrank.web.app'], ['오늘의 운세', 'https://todays-fortune-app.vercel.app'],
+  ['My Korean Name', 'https://mykoreanname.web.app'], ['Tangerine 10', 'https://tangerin10.web.app'], ['선물 룰렛', 'https://giftwheel.web.app'],
+  ['실내식물 사전', 'https://plantdict.web.app'], ['사자성어·속담 사전', 'https://idiomdict.web.app'],
+];
+// body 는 가운데 열, index 는 왼쪽 색인(기본: 판정·주제 바로가기), aside 는 오른쪽 열(없으면 2단)
+function layout({ title, desc, path, body, ld = [], type = 'website', share, index, aside = '', after = '', home = false }) {
   const url = abs(path);
   const shareObj = share ?? { title, desc, url, image: SITE.ogImage, kakaoKey: SITE.kakaoKey };
   return `<!DOCTYPE html>
@@ -89,7 +131,8 @@ function layout({ title, desc, path, body, ld = [], type = 'website', share }) {
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${url}">
 <meta name="robots" content="${isNoindex(path) ? 'noindex, follow' : 'index, follow'}">
-<meta name="theme-color" content="#1a1a2e">
+<meta name="theme-color" content="#121a2b">
+<meta name="color-scheme" content="dark">
 ${SITE.gsv.map((t) => `<meta name="google-site-verification" content="${t}">`).join('\n')}
 <meta name="google-adsense-account" content="${SITE.adsense}">
 <meta property="og:type" content="${type}">
@@ -108,23 +151,41 @@ ${SITE.gsv.map((t) => `<meta name="google-site-verification" content="${t}">`).j
 <meta name="twitter:image" content="${SITE.ogImage}">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" href="/favicon.png" sizes="512x512"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/assets/style.css?v=${ASSET_V}">
 ${ld.map(jsonld).join('\n')}
 ${NO_AD_PATHS.includes(path) ? '' : `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${SITE.adsense}" crossorigin="anonymous"></script>\n`}<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"></script>
 </head>
 <body>
-<header class="hdr"><div class="wrap">
-  <a class="logo" href="/">🌙 ${SITE.name} <span class="en">${SITE.nameEn}</span></a>
-  <div class="srch"><input type="search" placeholder="꿈에 뭐가 나왔나요? 예: 뱀, 이빨" aria-label="꿈 검색" autocomplete="off"><span class="ico">🔍</span><div class="dd"></div></div>
+<a class="skip" href="#main">본문 바로가기</a>
+<header class="top${home ? ' is-home' : ''}"><div class="wrap">
+  <a class="brand" href="/">${SITE.name} <small>${SITE.nameEn}</small></a>
+  ${searchBox('hdr-srch', '어젯밤 꿈에 나온 것을 검색 — 뱀, 이빨, 돈', 'q-top')}
+  <div class="top-meta"><span>${entries.length.toLocaleString()}개의 꿈 · ${categories.length}개 카테고리</span><button type="button" class="linkish" data-rand>아무 꿈이나 하나 보기</button></div>
 </div></header>
-<main class="wrap">
+<div class="wrap">
+<div class="page${aside ? '' : ' no-aside'}">
+${index ?? sideIndex()}
+<main class="article" id="main">
 ${body}
 </main>
-<footer class="ftr"><div class="wrap">
-  <div class="ftr-links"><a href="/">홈</a>${categories.map((c) => `<a href="${urlCat(c)}">${esc(c.name)}</a>`).join('')}</div>
-  <div class="ftr-links"><a href="/privacy/">개인정보처리방침</a><a href="/about/">사이트 소개</a><a href="/contact/">문의하기</a></div>
-  <div>해몽은 전통 민속과 심리학적 해석을 참고한 것으로 재미로 보아 주세요. © ${TODAY.slice(0, 4)} ${SITE.name}</div>
+${aside ? `<aside class="aside">${aside}</aside>` : ''}
+</div>
+${after}
+</div>
+<footer class="foot"><div class="wrap foot-grid">
+  <div>
+    <a class="brand" href="/">${SITE.name}</a>
+    <div class="foot-links"><a href="/privacy/">개인정보처리방침</a><a href="/about/">사이트 소개</a><a href="/contact/">문의하기</a></div>
+    <div class="foot-cats"><a href="/">홈</a>${categories.map((c) => `<a href="${urlCat(c)}">${esc(c.name)}</a>`).join('')}</div>
+  </div>
+  <div>
+    <p class="tools-h">comeonyourboyz가 만든 다른 도구</p>
+    <ul class="tools">${TOOLS.map(([n, u]) => `<li><a href="${u}"${u === SITE.url ? ' aria-current="page"' : ''}>${n}</a></li>`).join('')}</ul>
+    <p>해몽은 전통 민속과 심리학적 해석을 참고한 것으로 재미로 보아 주세요. © ${TODAY.slice(0, 4)} ${SITE.name}</p>
+  </div>
 </div></footer>
 <script>window.__SHARE__=${JSON.stringify(shareObj).replace(/</g, '\\u003c')};</script>
 <script src="/assets/app.js?v=${ASSET_V}" defer></script>
@@ -140,40 +201,50 @@ function pageIndex() {
   const body = `
 <section class="hero">
   <h1>어젯밤 꿈, 무슨 뜻일까?</h1>
-  <p>꿈에 나온 것을 검색하면 길몽·흉몽 판정과 상황별 해몽을 바로 알려드려요.</p>
-  <div class="srch big"><input type="search" placeholder="예: 뱀, 이빨 빠지는, 똥" aria-label="꿈 검색" autocomplete="off"><span class="ico">🔍</span><div class="dd"></div></div>
-  <button class="rand" id="randBtn" type="button">🎲 아무 꿈이나 하나 보기</button>
-  <div class="stat">${entries.length.toLocaleString()}개의 꿈 · ${categories.length}개 카테고리</div>
+  <p class="sub">꿈에 나온 것을 검색하면 길몽·흉몽 판정과 상황별 해몽을 바로 알려드려요.</p>
+  ${searchBox('big', '예: 뱀, 이빨 빠지는, 똥', 'q-hero')}
+  <div class="hero-meta"><button class="linkish" id="randBtn" type="button" data-rand>아무 꿈이나 하나 보기</button><span>${entries.length.toLocaleString()}개의 꿈 · ${categories.length}개 카테고리</span></div>
 </section>
-<section class="sec"><h2>🔥 많이 찾는 꿈</h2><div class="chips">${pop.map((e) => `<a class="chip" href="${urlDream(e)}">${esc(e.keyword)} ${badge(e.verdict)}</a>`).join('')}</div></section>
-<section class="sec"><h2>📚 카테고리</h2><div class="grid">${categories.map((c) => `<a class="cat-card" href="${urlCat(c)}"><div class="em">${c.emoji}</div><div class="nm">${esc(c.name)}</div><div class="ct">${(byCat.get(c.id) ?? []).length}개의 꿈</div></a>`).join('')}</div></section>
-<section class="sec"><h2>🔮 길몽·흉몽 모아보기</h2><div class="chips">${Object.keys(VERDICT).map((v) => `<a class="chip" href="${urlVerdict(v)}">${badge(v)} ${(byVerdict.get(v) ?? []).length}개</a>`).join('')}</div></section>
-<section class="sec"><h2>🏷 주제별</h2><div class="chips">${TAGS.filter((t) => byTag.get(t).length).map((t) => `<a class="chip" href="${urlTag(t)}">#${t} <span style="color:var(--muted);font-weight:600">${byTag.get(t).length}</span></a>`).join('')}</div></section>
-<section class="sec"><h2>🌙 꿈 해몽, 이렇게 보세요</h2>
+<h2>많이 찾는 꿈</h2>
+<p class="h2-note">사람들이 자주 찾아보는 꿈부터 모았습니다.</p>
+<ul class="rel cols">${pop.map((e) => `<li><a href="${urlDream(e)}"><span class="nm">${esc(e.keyword)}</span><span class="ld" aria-hidden="true"></span>${vtext(e.verdict)}</a></li>`).join('')}</ul>
+<h2>카테고리</h2>
+<p class="h2-note">카테고리마다 길몽·흉몽 비율이 다릅니다.</p>
+<ol class="catlist">${categories.map((c) => { const l = byCat.get(c.id) ?? []; return `<li><a href="${urlCat(c)}"><span class="cn">${esc(c.name)}</span><span class="cc">${l.length}개의 꿈</span><span class="cb">${tally(l, c.name)}</span></a></li>`; }).join('')}</ol>
+<h2>꿈 해몽, 이렇게 보세요</h2>
 <div class="body"><p>같은 뱀 꿈이라도 뱀이 나를 물었는지, 집으로 들어왔는지, 색이 무엇이었는지에 따라 해석이 갈립니다. 이 사전은 꿈 하나마다 기본 해석과 함께 <b>상황별 변형</b>을 따로 정리해, 내 꿈에 가장 가까운 풀이를 찾을 수 있게 했습니다.</p>
-<p>해몽은 전통 민속의 상징 풀이와 현대 심리학의 해석을 함께 담았습니다. 길몽이라 해서 로또를 사거나, 흉몽이라 해서 걱정하실 필요는 없습니다. 지금 내 마음이 어디에 머물러 있는지 들여다보는 계기로 가볍게 활용해 주세요.</p></div></section>`;
+<p>해몽은 전통 민속의 상징 풀이와 현대 심리학의 해석을 함께 담았습니다. 길몽이라 해서 로또를 사거나, 흉몽이라 해서 걱정하실 필요는 없습니다. 지금 내 마음이 어디에 머물러 있는지 들여다보는 계기로 가볍게 활용해 주세요.</p></div>`;
+  const aside = `<section><h2 class="a-h">길몽·흉몽 모아보기</h2>${tally(entries, '전체 꿈', true)}
+<ul class="glance">${VORDER.map((v) => `<li><a href="${urlVerdict(v)}">${VERDICT[v]} 모아보기<span class="v v-${VC[v]}">${(byVerdict.get(v) ?? []).length}개</span></a></li>`).join('')}</ul></section>
+<section><h2 class="a-h">주제별</h2><div class="taglist">${TAGS.filter((t) => byTag.get(t).length).map((t) => `<a href="${urlTag(t)}">#${t} <span>${byTag.get(t).length}</span></a>`).join('')}</div></section>`;
   const ld = [
     { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE.name, alternateName: ['꿈해몽사전', 'DreamDict'], url: `${SITE.url}/`, description: SITE.desc, inLanguage: 'ko',
       potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: `${SITE.url}/?q={search_term_string}` }, 'query-input': 'required name=search_term_string' } },
   ];
-  return layout({ title: `${SITE.name} — 뱀 꿈, 이빨 빠지는 꿈, 똥 꿈 해몽 검색`, desc: SITE.desc, path: '/', body, ld });
+  return layout({ title: `${SITE.name} — 뱀 꿈, 이빨 빠지는 꿈, 똥 꿈 해몽 검색`, desc: SITE.desc, path: '/', body, ld, aside, home: true,
+    index: `<nav class="index home-index" aria-label="꿈 색인"><div class="idx-h">카테고리 <span>${entries.length}</span></div><ul class="cats">${categories.map((c) => `<li><a href="${urlCat(c)}">${esc(c.name)}<span class="n">${(byCat.get(c.id) ?? []).length}</span></a></li>`).join('')}</ul></nav>` });
 }
+
+// 목록형 화면(카테고리·태그·판정) 공용 본문
+const listBody = ({ crumbs, kicker, h1, lead, list }) => `
+<nav class="crumb" aria-label="현재 위치">${crumbs}</nav>
+${kicker ? `<div class="kicker">${kicker}</div>` : ''}
+<h1>${h1}</h1>
+<p class="lead">${esc(lead)}</p>
+${list.length ? cards(list, ' two') : '<div class="empty">준비 중입니다.</div>'}`;
+const SEP = '<span class="sep" aria-hidden="true">›</span>';
 
 function pageCategory(c) {
   const list = byCat.get(c.id) ?? [];
-  const body = `
-<nav class="crumb"><a href="/">홈</a> › <span>${esc(c.name)}</span></nav>
-<article>
-<h1>${c.emoji} ${esc(c.name)} 꿈 해몽</h1>
-<p class="lead">${esc(c.name)} 관련 꿈 ${list.length}개의 해몽을 모았습니다. 길몽·흉몽 판정을 먼저 확인하고, 상세 페이지에서 상황별 풀이를 살펴보세요.</p>
-<div class="nav-cat">${categories.map((x) => `<a class="chip" href="${urlCat(x)}"${x.id === c.id ? ' style="border-color:var(--accent);color:var(--accent)"' : ''}>${x.emoji} ${esc(x.name)}</a>`).join('')}</div>
-<div class="list" style="margin-top:18px">${list.length ? list.map((e) => `<a class="row" href="${urlDream(e)}"><div style="flex:1"><div class="kw">${esc(e.keyword)}</div><div class="sm">${esc(e.summary)}</div></div>${badge(e.verdict)}</a>`).join('') : '<div class="empty">준비 중입니다.</div>'}</div>
-</article>`;
+  const body = listBody({ crumbs: `<a href="/">홈</a>${SEP}<span>${esc(c.name)}</span>`, kicker: `<span>${list.length}개의 꿈</span>`, h1: `${esc(c.name)} 꿈 해몽`,
+    lead: `${c.name} 관련 꿈 ${list.length}개의 해몽을 모았습니다. 길몽·흉몽 판정을 먼저 확인하고, 상세 페이지에서 상황별 풀이를 살펴보세요.`, list });
+  const aside = `<section><h2 class="a-h">${esc(c.name)} 판정 한눈에</h2>${tally(list, `${c.name} 꿈`)}</section>
+<section><h2 class="a-h">길몽·흉몽 모아보기</h2><ul class="glance">${VORDER.map((v) => `<li><a href="${urlVerdict(v)}">${VERDICT[v]} 모아보기<span class="v v-${VC[v]}">${(byVerdict.get(v) ?? []).length}개</span></a></li>`).join('')}</ul></section>`;
   const ld = [{ '@context': 'https://schema.org', '@type': 'CollectionPage', name: `${c.name} 꿈 해몽`, url: abs(urlCat(c)), inLanguage: 'ko',
     hasPart: list.slice(0, 50).map((e) => ({ '@type': 'Article', headline: e.title, url: abs(urlDream(e)) })) },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: '홈', item: SITE.url + '/' }, { '@type': 'ListItem', position: 2, name: c.name, item: abs(urlCat(c)) }] }];
-  return layout({ title: `${c.name} 꿈 해몽 ${list.length}개`, desc: `${c.name} 관련 꿈 해몽 ${list.length}개. ${list.slice(0, 6).map((e) => e.keyword).join(', ')} 등 길몽·흉몽 판정과 상황별 해석.`, path: urlCat(c), body, ld });
+  return layout({ title: `${c.name} 꿈 해몽 ${list.length}개`, desc: `${c.name} 관련 꿈 해몽 ${list.length}개. ${list.slice(0, 6).map((e) => e.keyword).join(', ')} 등 길몽·흉몽 판정과 상황별 해석.`, path: urlCat(c), body, ld, aside, index: sideIndex({ cat: c }) });
 }
 
 function pageDream(e) {
@@ -186,24 +257,28 @@ function pageDream(e) {
   const isDreamWord = /꿈$/.test(e.keyword); // 예지몽·태몽·악몽 등은 "해몽"을 덧붙이지 않음
   const h1 = isDreamWord ? `${e.keyword} 해몽` : e.keyword;
   const h2 = isDreamWord ? `상황별 ${e.keyword} 해몽` : `${e.keyword} 상황별 풀이`;
+  const sub = e.title.includes(' — ') ? e.title.split(' — ').slice(1).join(' — ') : '';
   const body = `
-<nav class="crumb"><a href="/">홈</a> › <a href="${urlCat(c)}">${esc(c.name)}</a> › <span>${esc(e.keyword)}</span></nav>
-<article>
-<h1>${esc(h1)} ${badge(e.verdict)}</h1>
+<nav class="crumb" aria-label="현재 위치"><a href="/">홈</a>${SEP}<a href="${urlCat(c)}">${esc(c.name)}</a>${SEP}<span>${esc(e.keyword)}</span></nav>
+<div class="kicker">${vpill(e.verdict)}<a href="${urlCat(c)}">${esc(c.name)}</a></div>
+<h1>${esc(h1)}</h1>
+${sub ? `<p class="sub">${esc(sub)}</p>` : ''}
 <p class="lead">${esc(e.summary)}</p>
-<div class="body">${paras(e.meaning)}</div>
-<h2>${esc(h2)}</h2>
-${e.variants.map((v) => `<div class="var"><h3>${esc(v.situation)} ${badge(v.verdict)}</h3><p>${esc(v.meaning)}</p></div>`).join('')}
-<div class="tags">${e.tags.map((t) => `<a class="tag" href="${urlTag(t)}">#${esc(t)}</a>`).join('')}<a class="tag" href="${urlVerdict(e.verdict)}">${VERDICT[e.verdict]} 모아보기</a></div>
-<div class="share">
-  <button class="sh k" onclick="shareKakao()" aria-label="카카오톡 공유">💬</button>
-  <button class="sh x" onclick="shareX()" aria-label="X 공유">𝕏</button>
-  <button class="sh f" onclick="shareFB()" aria-label="페이스북 공유">f</button>
-  <button class="sh c" onclick="copyLink()" aria-label="링크 복사">🔗</button>
-</div>
-${related.length ? `<h2>함께 보는 꿈</h2><div class="chips">${related.map((r) => `<a class="chip" href="${urlDream(r)}">${esc(r.keyword)} ${badge(r.verdict)}</a>`).join('')}</div>` : ''}
-${around.length ? `<h2>${c.emoji} ${esc(c.name)}의 다른 꿈</h2><div class="list">${around.map((r) => `<a class="row" href="${urlDream(r)}"><div style="flex:1"><div class="kw">${esc(r.keyword)}</div><div class="sm">${esc(r.summary)}</div></div>${badge(r.verdict)}</a>`).join('')}<a class="chip" style="align-self:flex-start" href="${urlCat(c)}">${esc(c.name)} 전체 보기 →</a></div>` : ''}
-</article>`;
+<div class="prose"><section class="part" aria-label="해몽 풀이"><div class="part-l">해몽 풀이</div><div>${paras(e.meaning)}</div></section></div>
+<h2 id="cases">${esc(h2)}</h2>
+<p class="h2-note">같은 꿈이라도 장면에 따라 판정이 달라집니다.</p>
+<ol class="cases">${e.variants.map((v, i) => `<li class="case" id="c${i + 1}"><div class="case-v v-${VC[v.verdict]}"><i class="dot" aria-hidden="true"></i>${VERDICT[v.verdict]}</div><div><h3>${esc(v.situation)}</h3><p>${esc(v.meaning)}</p></div></li>`).join('')}</ol>
+<div class="tags">${e.tags.map((t) => `<a href="${urlTag(t)}">#${esc(t)}</a>`).join('')}<a class="more" href="${urlVerdict(e.verdict)}">${VERDICT[e.verdict]} 모아보기</a></div>
+<div class="share" aria-label="공유하기">
+  <button class="sh" type="button" onclick="shareKakao()" aria-label="카카오톡 공유">카카오톡</button>
+  <button class="sh" type="button" onclick="shareX()" aria-label="X 공유">X</button>
+  <button class="sh" type="button" onclick="shareFB()" aria-label="페이스북 공유">페이스북</button>
+  <button class="sh" type="button" onclick="copyLink()" aria-label="링크 복사">링크 복사</button>
+</div>`;
+  const aside = `<section><h2 class="a-h">상황별 판정 한눈에</h2>${tally(e.variants, '상황')}
+<ul class="glance">${e.variants.map((v, i) => `<li><a href="#c${i + 1}">${esc(v.situation)}${vtext(v.verdict)}</a></li>`).join('')}</ul></section>
+${related.length ? `<section><h2 class="a-h">함께 보는 꿈</h2><ul class="rel">${related.map((r) => `<li><a href="${urlDream(r)}"><span class="nm">${esc(r.keyword)}</span><span class="ld" aria-hidden="true"></span>${vtext(r.verdict)}</a></li>`).join('')}</ul></section>` : ''}`;
+  const after = around.length ? `<section class="more-sec" aria-labelledby="more-h"><div class="more-head"><h2 id="more-h">${esc(c.name)}의 다른 꿈</h2><a href="${urlCat(c)}">${esc(c.name)} 전체 보기</a></div>${cards(around)}</section>` : '';
   const ld = [
     { '@context': 'https://schema.org', '@type': 'Article', headline: e.title, description: e.summary, inLanguage: 'ko', mainEntityOfPage: abs(path), image: SITE.ogImage,
       datePublished: SITE.launch, dateModified: TODAY, author: { '@type': 'Organization', name: SITE.name, url: SITE.url }, publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url }, keywords: e.searchTerms.join(', '), articleSection: c.name },
@@ -211,29 +286,25 @@ ${around.length ? `<h2>${c.emoji} ${esc(c.name)}의 다른 꿈</h2><div class="l
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: '홈', item: SITE.url + '/' }, { '@type': 'ListItem', position: 2, name: c.name, item: abs(urlCat(c)) }, { '@type': 'ListItem', position: 3, name: e.keyword, item: abs(path) }] },
   ];
-  return layout({ title: fitTitle(e.title), desc: e.summary, path, body, ld, type: 'article',
+  return layout({ title: fitTitle(e.title), desc: e.summary, path, body, ld, type: 'article', aside, after, index: sideIndex({ cat: c, entry: e }),
     share: { title: `${e.keyword} 해몽 — ${VERDICT[e.verdict]}`, desc: e.summary, url: abs(path), image: SITE.ogImage, kakaoKey: SITE.kakaoKey } });
 }
 
-function pageList({ path, crumb, h1, lead, list, title, desc }) {
-  const body = `
-<nav class="crumb"><a href="/">홈</a> › <span>${esc(crumb)}</span></nav>
-<article>
-<h1>${h1}</h1>
-<p class="lead">${esc(lead)}</p>
-<div class="list" style="margin-top:18px">${list.length ? rows(list) : '<div class="empty">준비 중입니다.</div>'}</div>
-</article>`;
+function pageList({ path, crumb, kicker, h1, lead, list, title, desc, aside }) {
+  const body = listBody({ crumbs: `<a href="/">홈</a>${SEP}<span>${esc(crumb)}</span>`, kicker, h1, lead, list });
   const ld = [{ '@context': 'https://schema.org', '@type': 'CollectionPage', name: crumb, url: abs(path), inLanguage: 'ko',
     hasPart: list.slice(0, 50).map((e) => ({ '@type': 'Article', headline: e.title, url: abs(urlDream(e)) })) }];
-  return layout({ title, desc, path, body, ld });
+  return layout({ title, desc, path, body, ld, aside });
 }
-const pageTag = (t) => pageList({ path: urlTag(t), crumb: `#${t}`, h1: `#${esc(t)} 관련 꿈 해몽`, lead: `${t} 관련 꿈 ${byTag.get(t).length}개입니다. 길몽·흉몽 판정을 확인하고 상세 해몽을 살펴보세요.`, list: byTag.get(t),
+const pageTag = (t) => pageList({ path: urlTag(t), crumb: `#${t}`, kicker: `<span>주제 · ${byTag.get(t).length}개의 꿈</span>`, h1: `#${esc(t)} 관련 꿈 해몽`, lead: `${t} 관련 꿈 ${byTag.get(t).length}개입니다. 길몽·흉몽 판정을 확인하고 상세 해몽을 살펴보세요.`, list: byTag.get(t),
+  aside: `<section><h2 class="a-h">#${esc(t)} 판정 한눈에</h2>${tally(byTag.get(t), `#${t} 꿈`)}</section>`,
   title: `${t} 관련 꿈 해몽 ${byTag.get(t).length}개`, desc: `${t}에 관한 꿈 해몽 ${byTag.get(t).length}개. ${byTag.get(t).slice(0, 6).map((e) => e.keyword).join(', ')} 등.` });
-const pageVerdict = (v) => pageList({ path: urlVerdict(v), crumb: `${VERDICT[v]} 모아보기`, h1: `${VERDICT[v]} 모아보기 ${badge(v)}`, lead: VERDICT_DESC[v], list: byVerdict.get(v),
+const pageVerdict = (v) => pageList({ path: urlVerdict(v), crumb: `${VERDICT[v]} 모아보기`, kicker: `${vpill(v)}<span>${byVerdict.get(v).length}개의 꿈</span>`, h1: `${VERDICT[v]} 모아보기`, lead: VERDICT_DESC[v], list: byVerdict.get(v),
+  aside: `<section><h2 class="a-h">전체 판정 분포</h2>${tally(entries, '전체 꿈', true)}</section>`,
   title: `${VERDICT[v]} 꿈 ${byVerdict.get(v).length}개`, desc: `${VERDICT_DESC[v]} ${byVerdict.get(v).slice(0, 6).map((e) => e.keyword).join(', ')} 등 ${byVerdict.get(v).length}개.` });
 
 function pageStatic(path, title, desc, inner) {
-  return layout({ title: `${title}`, desc, path, body: `<nav class="crumb"><a href="/">홈</a> › <span>${esc(title)}</span></nav><article><h1>${esc(title)}</h1><div class="body">${inner}</div></article>` });
+  return layout({ title: `${title}`, desc, path, body: `<nav class="crumb" aria-label="현재 위치"><a href="/">홈</a>${SEP}<span>${esc(title)}</span></nav><h1>${esc(title)}</h1><div class="body doc">${inner}</div>` });
 }
 
 // ---------- build ----------
@@ -306,7 +377,7 @@ write('about/index.html', pageStatic('/about/', '사이트 소개', `꿈해몽 �
 <p>서울에서 일하는 소프트웨어 개발자가 업무 외 시간에 혼자 만들고 운영합니다. 사업자 등록을 한 상업 사이트가 아니며, 운영 비용은 광고 수익으로 충당합니다.</p>
 <p>잘못된 풀이나 빠진 꿈을 발견하셨다면 <a href="/contact/">문의하기</a>로 알려 주세요. 수집하는 정보는 <a href="/privacy/">개인정보처리방침</a>에 정리해 두었습니다.</p>
 `));
-write('404.html', layout({ title: `페이지를 찾을 수 없어요`, desc: SITE.desc, path: '/404.html', body: `<div class="empty" style="padding:80px 0"><div style="font-size:60px">🌙</div><h1 style="font-size:22px;margin:10px 0">그런 꿈은 아직 없어요</h1><p>위 검색창에서 다른 단어로 찾아보세요.</p><p style="margin-top:16px"><a class="chip" href="/">홈으로</a></p></div>` }));
+write('404.html', layout({ title: `페이지를 찾을 수 없어요`, desc: SITE.desc, path: '/404.html', body: `<div class="nf"><p class="kicker">404</p><h1>그런 꿈은 아직 없어요</h1><p class="sub">위 검색창에서 다른 단어로 찾아보거나, 카테고리에서 둘러보세요.</p><p><a class="more-link" href="/">홈으로</a></p></div>` }));
 
 // 검색 인덱스: k=keyword, u=url, c=category name, s=searchTerms
 writeFileSync(join(OUT, 'search-index.json'), JSON.stringify(entries.map((e) => ({ k: e.keyword, u: urlDream(e), c: catById.get(e.category).name, s: e.searchTerms }))));
