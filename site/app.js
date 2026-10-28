@@ -21,24 +21,45 @@
     return out.slice(0,8).map(function(x){return x[1];});
   }
   function esc(s){return s.replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  var uid=0;
   function bind(box){
-    var inp=box.querySelector('input'), dd=box.querySelector('.dd'), sel=-1, items=[];
-    function render(list){ items=list; sel=-1;
-      if(!inp.value.trim()){dd.classList.remove('on');return;}
-      if(!list.length){ dd.innerHTML='<div class="none">검색 결과가 없어요. 다른 단어로 찾아보세요.</div>'; dd.classList.add('on'); return; }
-      dd.innerHTML=list.map(function(it){return '<a href="'+it.u+'"><span>'+esc(it.k)+'</span><span class="cat">'+esc(it.c)+'</span></a>';}).join('');
-      dd.classList.add('on'); }
-    var t; inp.addEventListener('input',function(){ clearTimeout(t); t=setTimeout(function(){ load().then(function(){render(search(inp.value));}); },80); });
-    inp.addEventListener('focus',function(){ load(); if(inp.value.trim()) render(search(inp.value)); });
+    var inp=box.querySelector('input'), dd=box.querySelector('.dd'), sel=-1, items=[], lid='dd-'+(++uid);
+    // 콤보박스 ARIA: 화살표로 고른 항목을 스크린리더에 알린다
+    dd.id=lid; dd.setAttribute('role','listbox'); dd.setAttribute('aria-label','검색 결과');
+    inp.setAttribute('role','combobox'); inp.setAttribute('aria-autocomplete','list'); inp.setAttribute('aria-controls',lid); inp.setAttribute('aria-expanded','false');
+    function open(on){ dd.classList.toggle('on',on); inp.setAttribute('aria-expanded',on?'true':'false'); if(!on) mark(-1); }
+    function mark(i){ sel=i; var as=dd.querySelectorAll('a');
+      as.forEach(function(a,j){ a.classList.toggle('sel',j===i); a.setAttribute('aria-selected',j===i?'true':'false'); });
+      if(i>=0&&as[i]) inp.setAttribute('aria-activedescendant',as[i].id); else inp.removeAttribute('aria-activedescendant'); }
+    function render(list){ items=list;
+      if(!inp.value.trim()){ dd.innerHTML=''; open(false); return; }
+      if(!list.length){ dd.innerHTML='<div class="none" role="option" aria-disabled="true">검색 결과가 없어요. 다른 단어로 찾아보세요.</div>'; open(true); return; }
+      dd.innerHTML=list.map(function(it,i){return '<a id="'+lid+'-'+i+'" role="option" aria-selected="false" href="'+it.u+'"><span>'+esc(it.k)+'</span><span class="cat">'+esc(it.c)+'</span></a>';}).join('');
+      open(true); mark(-1); }
+    var t; function refresh(){ clearTimeout(t); return load().then(function(){ render(search(inp.value)); }); }
+    inp.addEventListener('input',function(){ clearTimeout(t); t=setTimeout(refresh,80); });
+    inp.addEventListener('focus',function(){ load(); if(inp.value.trim()) refresh(); });
     inp.addEventListener('keydown',function(e){
-      var as=dd.querySelectorAll('a');
-      if(e.key==='ArrowDown'){ e.preventDefault(); sel=Math.min(sel+1,as.length-1); }
-      else if(e.key==='ArrowUp'){ e.preventDefault(); sel=Math.max(sel-1,0); }
-      else if(e.key==='Enter'){ if(as.length){ location.href=(as[sel>=0?sel:0]).href; } return; }
-      else if(e.key==='Escape'){ dd.classList.remove('on'); return; } else return;
-      as.forEach(function(a,i){a.classList.toggle('sel',i===sel);});
+      if(e.isComposing||e.keyCode===229) return; // 한글 조합 중 Enter·화살표는 조합 확정에 쓰인다
+      var n=dd.querySelectorAll('a').length;
+      if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+        if(!inp.value.trim()) return;
+        e.preventDefault();
+        if(!dd.classList.contains('on')){ refresh(); return; } // Esc 로 닫은 뒤 화살표로 다시 연다
+        if(!n) return;
+        mark(e.key==='ArrowDown' ? (sel+1)%n : (sel<=0 ? n-1 : sel-1));
+      }
+      else if(e.key==='Enter'){
+        if(!inp.value.trim()) return;
+        e.preventDefault();
+        // 고른 항목이 있으면 그곳으로, 아니면 지금 입력값의 첫 결과로(입력 직후 바로 Enter 해도 동작)
+        if(sel>=0&&dd.classList.contains('on')){ location.href=items[sel].u; return; }
+        refresh().then(function(){ if(items.length) location.href=items[0].u; });
+      }
+      else if(e.key==='Escape'){ if(dd.classList.contains('on')){ e.preventDefault(); open(false); } }
     });
-    document.addEventListener('click',function(e){ if(!box.contains(e.target)) dd.classList.remove('on'); });
+    dd.addEventListener('mousemove',function(e){ var a=e.target.closest('a'); if(!a) return; var as=[].slice.call(dd.querySelectorAll('a')); var i=as.indexOf(a); if(i!==sel) mark(i); });
+    document.addEventListener('click',function(e){ if(!box.contains(e.target)) open(false); });
   }
   document.querySelectorAll('.srch').forEach(bind);
   // /?q=검색어 딥링크 (schema.org SearchAction) → 히어로 검색창에 채우고 결과 표시

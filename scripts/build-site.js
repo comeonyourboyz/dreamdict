@@ -119,7 +119,7 @@ const TOOLS = [
   ['실내식물 사전', 'https://plantdict.web.app'], ['사자성어·속담 사전', 'https://idiomdict.web.app'],
 ];
 // body 는 가운데 열, index 는 왼쪽 색인(기본: 판정·주제 바로가기), aside 는 오른쪽 열(없으면 2단)
-function layout({ title, desc, path, body, ld = [], type = 'website', share, index, aside = '', after = '', home = false }) {
+function layout({ title, desc, path, body, ld = [], type = 'website', share, index, aside = '', asideCls = '', after = '', home = false }) {
   const url = abs(path);
   const shareObj = share ?? { title, desc, url, image: SITE.ogImage, kakaoKey: SITE.kakaoKey };
   return `<!DOCTYPE html>
@@ -166,12 +166,12 @@ ${NO_AD_PATHS.includes(path) ? '' : `<script async src="https://pagead2.googlesy
   <div class="top-meta"><span>${entries.length.toLocaleString()}개의 꿈 · ${categories.length}개 카테고리</span><button type="button" class="linkish" data-rand>아무 꿈이나 하나 보기</button></div>
 </div></header>
 <div class="wrap">
-<div class="page${aside ? '' : ' no-aside'}">
+<div class="page${aside ? (asideCls === 'toc' ? ' has-toc' : '') : ' no-aside'}">
 ${index ?? sideIndex()}
 <main class="article" id="main">
 ${body}
 </main>
-${aside ? `<aside class="aside">${aside}</aside>` : ''}
+${aside ? `<aside class="aside${asideCls ? ` ${asideCls}` : ''}"${asideCls === 'toc' ? ' aria-label="이 페이지의 내용"' : ''}>${aside}</aside>` : ''}
 </div>
 ${after}
 </div>
@@ -303,8 +303,12 @@ const pageVerdict = (v) => pageList({ path: urlVerdict(v), crumb: `${VERDICT[v]}
   aside: `<section><h2 class="a-h">전체 판정 분포</h2>${tally(entries, '전체 꿈', true)}</section>`,
   title: `${VERDICT[v]} 꿈 ${byVerdict.get(v).length}개`, desc: `${VERDICT_DESC[v]} ${byVerdict.get(v).slice(0, 6).map((e) => e.keyword).join(', ')} 등 ${byVerdict.get(v).length}개.` });
 
+// 소개·방침·문의: 넓은 화면에서 오른쪽 단이 비지 않게 본문 소제목으로 목차를 만든다(1180px 이하에서는 숨김)
 function pageStatic(path, title, desc, inner) {
-  return layout({ title: `${title}`, desc, path, body: `<nav class="crumb" aria-label="현재 위치"><a href="/">홈</a>${SEP}<span>${esc(title)}</span></nav><h1>${esc(title)}</h1><div class="body doc">${inner}</div>` });
+  const heads = [];
+  const html = inner.replace(/<h2>(.*?)<\/h2>/g, (_, h) => { heads.push(h); return `<h2 id="s${heads.length}">${h}</h2>`; });
+  const aside = heads.length >= 2 ? `<section><h2 class="a-h">이 페이지의 내용</h2><ul class="glance">${heads.map((h, i) => `<li><a href="#s${i + 1}">${h}</a></li>`).join('')}</ul></section>` : '';
+  return layout({ title: `${title}`, desc, path, aside, asideCls: 'toc', body: `<nav class="crumb" aria-label="현재 위치"><a href="/">홈</a>${SEP}<span>${esc(title)}</span></nav><h1>${esc(title)}</h1><div class="body doc">${html}</div>` });
 }
 
 // ---------- build ----------
