@@ -135,6 +135,7 @@ function layout({ title, desc, path, body, ld = [], type = 'website', share, ind
 <meta name="color-scheme" content="dark">
 ${SITE.gsv.map((t) => `<meta name="google-site-verification" content="${t}">`).join('\n')}
 <meta name="google-adsense-account" content="${SITE.adsense}">
+<meta name="naver-site-verification" content="6a6fb9868539c8cfc19741bdb2ae87e246c598ac">
 <meta property="og:type" content="${type}">
 <meta property="og:site_name" content="${SITE.name}">
 <meta property="og:title" content="${esc(title)}">
