@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "cyb-dreamdict",
     "public": "public",
     "ignore": [
       "firebase.json",

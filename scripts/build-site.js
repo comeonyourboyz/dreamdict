@@ -7,11 +7,11 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(root, 'public');
 const SITE = {
-  url: 'https://dreamdict.web.app',
+  url: 'https://dreamdict.comeonyourboyz.app',
   name: '꿈해몽 사전',
   nameEn: 'DreamDict',
   desc: '꿈에 나온 것을 검색하면 길몽·흉몽 판정과 상황별 해몽을 바로 알려드리는 꿈해몽 사전입니다.',
-  ogImage: 'https://dreamdict.web.app/og-image.png',
+  ogImage: 'https://dreamdict.comeonyourboyz.app/og-image.png',
   launch: '2026-09-10',
   kakaoKey: '20fa9624337a5f9b11b0fe995708b754',
   adsense: 'ca-pub-5479403345572412', // 2026-10-13 애드센스 승인. 자동 광고라 스크립트만 둔다
@@ -114,9 +114,9 @@ const byVerdict = new Map(Object.keys(VERDICT).map((v) => [v, entries.filter((e)
 // 계정 소유 확인은 google-adsense-account 메타로 모든 페이지에 유지한다.
 const NO_AD_PATHS = ['/404.html', '/privacy/', '/contact/', '/about/'];
 const TOOLS = [
-  ['꿈해몽 사전', 'https://dreamdict.web.app'], ['내 연봉 순위', 'https://salaryrank.web.app'], ['오늘의 운세', 'https://todays-fortune-app.vercel.app'],
-  ['My Korean Name', 'https://mykoreanname.web.app'], ['Tangerine 10', 'https://tangerin10.web.app'], ['선물 룰렛', 'https://giftwheel.web.app'],
-  ['실내식물 사전', 'https://plantdict.web.app'], ['사자성어·속담 사전', 'https://idiomdict.web.app'],
+  ['꿈해몽 사전', 'https://dreamdict.comeonyourboyz.app'], ['내 연봉 순위', 'https://salaryrank.comeonyourboyz.app'], ['오늘의 운세', 'https://todays-fortune.comeonyourboyz.app'],
+  ['My Korean Name', 'https://mykoreanname.comeonyourboyz.app'], ['Tangerine 10', 'https://tangerin10.comeonyourboyz.app'], ['선물 룰렛', 'https://giftwheel.comeonyourboyz.app'],
+  ['실내식물 사전', 'https://plantdict.comeonyourboyz.app'], ['사자성어·속담 사전', 'https://idiomdict.comeonyourboyz.app'],
 ];
 // body 는 가운데 열, index 는 왼쪽 색인(기본: 판정·주제 바로가기), aside 는 오른쪽 열(없으면 2단)
 function layout({ title, desc, path, body, ld = [], type = 'website', share, index, aside = '', asideCls = '', after = '', home = false }) {
@@ -326,7 +326,7 @@ const tagsUsed = TAGS.filter((t) => byTag.get(t).length);
 for (const t of tagsUsed) write(`tag/${t}/index.html`, pageTag(t));
 for (const v of Object.keys(VERDICT)) write(`verdict/${v}/index.html`, pageVerdict(v));
 write('privacy/index.html', pageStatic('/privacy/', '개인정보처리방침', `꿈해몽 사전이 수집하는 정보, Google 광고 쿠키와 맞춤 광고 거부 방법, 검색어 저장 여부를 정리했습니다. 회원가입 없이 이용하며 검색 기록은 서버에 저장하지 않습니다.`, `
-<p><b>${SITE.name}</b>(dreamdict.web.app)은 회원가입 없이 이용하는 정보 제공 사이트입니다. 운영자는 이름·이메일 등 개인정보를 직접 수집하지 않으며, 검색창에 입력한 검색어도 서버로 보내거나 저장하지 않습니다. 다만 아래와 같이 광고·호스팅 서비스를 제공하는 제3자가 쿠키나 접속 로그로 일부 정보를 수집할 수 있습니다.</p>
+<p><b>${SITE.name}</b>(dreamdict.comeonyourboyz.app)은 회원가입 없이 이용하는 정보 제공 사이트입니다. 운영자는 이름·이메일 등 개인정보를 직접 수집하지 않으며, 검색창에 입력한 검색어도 서버로 보내거나 저장하지 않습니다. 다만 아래와 같이 광고·호스팅 서비스를 제공하는 제3자가 쿠키나 접속 로그로 일부 정보를 수집할 수 있습니다.</p>
 <h2>광고와 쿠키</h2>
 <p>이 사이트에는 Google AdSense 광고가 게재됩니다.</p>
 <p>Google을 포함한 제3자 공급업체는 쿠키를 사용하여 사용자가 이 웹사이트나 다른 웹사이트를 이전에 방문한 기록을 바탕으로 광고를 게재합니다.</p>

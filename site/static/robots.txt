@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://dreamdict.web.app/sitemap.xml
+Sitemap: https://dreamdict.comeonyourboyz.app/sitemap.xml

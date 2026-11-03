@@ -2,7 +2,7 @@
 
 광고 수익용 정적 사이트. 꿈 키워드마다 개별 페이지를 만들어 롱테일 검색 유입을 노린다.
 
-- 사이트: https://dreamdict.web.app
+- 사이트: https://dreamdict.comeonyourboyz.app
 - 호스팅: Firebase Hosting (프로젝트 `dreamdict`)
 - 소스: https://github.com/comeonyourboyz/dreamdict
 

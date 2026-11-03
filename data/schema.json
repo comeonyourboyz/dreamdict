@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://dreamdict.web.app/schema/dream-entry.json",
+  "$id": "https://dreamdict.comeonyourboyz.app/schema/dream-entry.json",
   "title": "DreamEntry",
   "description": "꿈 해몽 항목 하나. data/entries/<category>.json 은 이 객체의 배열이다.",
   "type": "object",
