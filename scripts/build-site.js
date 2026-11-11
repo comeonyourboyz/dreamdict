@@ -270,11 +270,12 @@ ${sub ? `<p class="sub">${esc(sub)}</p>` : ''}
 <p class="h2-note">같은 꿈이라도 장면에 따라 판정이 달라집니다.</p>
 <ol class="cases">${e.variants.map((v, i) => `<li class="case" id="c${i + 1}"><div class="case-v v-${VC[v.verdict]}"><i class="dot" aria-hidden="true"></i>${VERDICT[v.verdict]}</div><div><h3>${esc(v.situation)}</h3><p>${esc(v.meaning)}</p></div></li>`).join('')}</ol>
 <div class="tags">${e.tags.map((t) => `<a href="${urlTag(t)}">#${esc(t)}</a>`).join('')}<a class="more" href="${urlVerdict(e.verdict)}">${VERDICT[e.verdict]} 모아보기</a></div>
+<p class="share-t">이 해몽, 친구에게도 알려 주세요</p>
 <div class="share" aria-label="공유하기">
-  <button class="sh" type="button" onclick="shareKakao()" aria-label="카카오톡 공유">카카오톡</button>
-  <button class="sh" type="button" onclick="shareX()" aria-label="X 공유">X</button>
-  <button class="sh" type="button" onclick="shareFB()" aria-label="페이스북 공유">페이스북</button>
-  <button class="sh" type="button" onclick="copyLink()" aria-label="링크 복사">링크 복사</button>
+  <button class="sh sh-k" type="button" onclick="shareKakao()" aria-label="카카오톡 공유"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.48 3 2 6.58 2 11c0 2.84 1.87 5.33 4.69 6.75l-1 3.66c-.09.32.27.58.55.4l4.36-2.9c.46.06.93.09 1.4.09 5.52 0 10-3.58 10-8S17.52 3 12 3z"/></svg><span>카카오톡</span></button>
+  <button class="sh sh-x" type="button" onclick="shareX()" aria-label="X 공유"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X</span></button>
+  <button class="sh sh-f" type="button" onclick="shareFB()" aria-label="페이스북 공유"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span>페이스북</span></button>
+  <button class="sh sh-l" type="button" onclick="copyLink()" aria-label="링크 복사"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><span>링크 복사</span></button>
 </div>`;
   const aside = `<section><h2 class="a-h">상황별 판정 한눈에</h2>${tally(e.variants, '상황')}
 <ul class="glance">${e.variants.map((v, i) => `<li><a href="#c${i + 1}">${esc(v.situation)}${vtext(v.verdict)}</a></li>`).join('')}</ul></section>

@@ -117,9 +117,16 @@ h2{font-family:var(--serif);font-weight:700;font-size:28px;letter-spacing:-.01em
 .tags a:hover{color:var(--ink)}
 .tags .more,.more-link{margin-left:auto;color:var(--mixed);border-bottom:1px solid currentColor}
 .more-link{margin-left:0}
-.share{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0;max-width:var(--measure)}
-.sh{height:38px;padding:0 16px;border:1px solid var(--rule);border-radius:19px;background:transparent;color:var(--ink-2);font:inherit;font-size:14px;cursor:pointer;transition:border-color .15s,color .15s}
-.sh:hover{border-color:var(--mixed);color:var(--ink)}
+.share-t{margin:36px 0 10px;font-size:15px;font-weight:700;color:var(--ink);max-width:var(--measure)}
+.share{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0;max-width:var(--measure)}
+.sh{display:flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 12px;border:1px solid transparent;border-radius:12px;font:inherit;font-size:15px;font-weight:700;cursor:pointer;transition:transform .15s,filter .15s}
+.sh svg{width:20px;height:20px;flex:none}
+.sh:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.sh-k{background:#fee500;color:#191919}
+.sh-x{background:#000;color:#fff;border-color:#3a4566}
+.sh-f{background:#1877f2;color:#fff}
+.sh-l{background:var(--night-2);color:var(--ink);border-color:var(--leader)}
+@media (max-width:560px){.share{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* 일반 문서(소개·방침·문의·홈 안내) */
 .body{max-width:var(--measure)}
