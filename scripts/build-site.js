@@ -11,7 +11,7 @@ const SITE = {
   name: '꿈해몽 사전',
   nameEn: 'DreamDict',
   desc: '꿈에 나온 것을 검색하면 길몽·흉몽 판정과 상황별 해몽을 바로 알려드리는 꿈해몽 사전입니다.',
-  ogImage: 'https://dreamdict.comeonyourboyz.app/og-image.png',
+  ogImage: 'https://dreamdict.comeonyourboyz.app/og-image.png?v=2',
   launch: '2026-09-10',
   kakaoKey: '20fa9624337a5f9b11b0fe995708b754',
   adsense: 'ca-pub-5479403345572412', // 2026-10-13 애드센스 승인. 자동 광고라 스크립트만 둔다
